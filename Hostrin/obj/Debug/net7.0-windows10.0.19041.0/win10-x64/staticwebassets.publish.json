@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TR9rK/rEqR1yTi65mrF67YECLW+XbFrowsA5B/W1zYo=",
+  "Hash": "wpM8XbsxZgxiXguV0llHe3Xl0wrT9+Qyrb8B8ZoiGGc=",
   "Source": "Hostrin",
   "BasePath": "/",
   "Mode": "Root",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Source\\Repos\\HomeStreetInvest\\Hostrin\\obj\\Debug\\net7.0-windows10.0.19041.0\\win10-x64\\scopedcss\\projectbundle\\Hostrin.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Source\\Repos\\HomeStreetInvest\\Hostrin\\wwwroot\\Assets\\Loader.gif",
+      "SourceId": "Hostrin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Source\\Repos\\HomeStreetInvest\\Hostrin\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "Assets/Loader.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Assets\\Loader.gif"
     },
     {
       "Identity": "D:\\Source\\Repos\\HomeStreetInvest\\Hostrin\\wwwroot\\css\\app.css",

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Hostrin.styles.css"
     },
     {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Hostrin\\wwwroot\\Assets\\Loader.gif",
+      "PackagePath": "staticwebassets\\Assets\\Loader.gif"
+    },
+    {
       "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Hostrin\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },
