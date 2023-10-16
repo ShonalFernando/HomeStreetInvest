@@ -29,7 +29,7 @@
     <AppXManifest Include="D:\Source\Repos\HomeStreetInvest\Hostrin\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-10-15T12:26:47.268</Modified>
+      <Modified>2023-10-16T04:32:24.048</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Hostrin.dll">
       <PackagePath>Hostrin.dll</PackagePath>
-      <Modified>2023-10-15T12:26:42.319</Modified>
+      <Modified>2023-10-15T14:32:16.505</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Hostrin.exe</PackagePath>
-      <Modified>2023-10-15T12:26:42.512</Modified>
+      <Modified>2023-10-15T14:32:16.878</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.netcore.app.runtime.win-x64\7.0.9\runtimes\win-x64\lib\net7.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -987,7 +987,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\Hostrin.deps.json">
       <PackagePath>Hostrin.deps.json</PackagePath>
-      <Modified>2023-10-15T12:26:46.601</Modified>
+      <Modified>2023-10-16T04:32:23.422</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files\dotnet\packs\Microsoft.Maui.Controls.Ref.win\7.0.86\ref\net7.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1007,11 +1007,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\Hostrin.styles.css">
       <PackagePath>wwwroot\Hostrin.styles.css</PackagePath>
-      <Modified>2023-10-14T11:14:17.494</Modified>
+      <Modified>2023-10-15T14:58:58.881</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\obj\Debug\net7.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\Hostrin.bundle.scp.css">
       <PackagePath>wwwroot\Hostrin.bundle.scp.css</PackagePath>
-      <Modified>2023-10-14T11:14:17.497</Modified>
+      <Modified>2023-10-15T14:58:58.885</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\wwwroot\Assets\Loader.gif">
       <PackagePath>wwwroot\Assets\Loader.gif</PackagePath>
@@ -1019,7 +1019,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\wwwroot\css\app.css">
       <PackagePath>wwwroot\css\app.css</PackagePath>
-      <Modified>2023-10-14T11:12:43.582</Modified>
+      <Modified>2023-10-16T04:26:23.774</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\wwwroot\css\bootstrap\bootstrap.min.css">
       <PackagePath>wwwroot\css\bootstrap\bootstrap.min.css</PackagePath>
@@ -1303,7 +1303,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\Shared\MainLayout.razor.css">
       <PackagePath>Shared\MainLayout.razor.css</PackagePath>
-      <Modified>2023-10-14T11:12:44.018</Modified>
+      <Modified>2023-10-15T14:58:55.422</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Hostrin\Shared\NavMenu.razor.css">
       <PackagePath>Shared\NavMenu.razor.css</PackagePath>

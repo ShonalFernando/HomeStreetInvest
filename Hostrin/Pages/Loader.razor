@@ -1,16 +1,12 @@
 ﻿@page "/Loader"
 
-<div class="Loader">
-    <img src="Assets/Loader.gif" />
+<div class="CenterHolder">
+    <img class="CenterImage" src="Assets/Loader.gif" />
 </div>
 
-
 <style>
-    .Loader{
-        width: 40%;
-        height: 40%;
-        margin-left: 30%;
-        margin-top: 30%;
+    body{
+        animation: ChangeBackColor 4s infinite; /* Adjust the duration as needed */
     }
 </style>
 @code {
