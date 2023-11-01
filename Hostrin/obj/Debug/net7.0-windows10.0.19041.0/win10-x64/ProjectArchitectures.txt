@@ -1,1 +1,0 @@
-D:\Source\Repos\HomeStreetInvest\Hostrin\Hostrin.csproj;x64

@@ -4,9 +4,9 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hostrin", "Hostrin\Hostrin.csproj", "{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "HouseValueService", "HouseValueService\HouseValueService.pyproj", "{70F09580-11C9-4C52-BF82-7558C5CA957B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HousingIntel", "HousingIntel\HousingIntel.csproj", "{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HPPService", "HPPService\HPPService.csproj", "{7EE5B385-D007-4402-A0A7-6D4ABCBDF0AC}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HomeStreetInvest.Model", "HomeStreetInvest.Model\HomeStreetInvest.Model.shproj", "{00782548-C1E4-4BC0-AB7E-8A9157845EBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,20 +20,19 @@ Global
 		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{70F09580-11C9-4C52-BF82-7558C5CA957B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70F09580-11C9-4C52-BF82-7558C5CA957B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70F09580-11C9-4C52-BF82-7558C5CA957B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70F09580-11C9-4C52-BF82-7558C5CA957B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7EE5B385-D007-4402-A0A7-6D4ABCBDF0AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7EE5B385-D007-4402-A0A7-6D4ABCBDF0AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7EE5B385-D007-4402-A0A7-6D4ABCBDF0AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7EE5B385-D007-4402-A0A7-6D4ABCBDF0AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {7DC6094F-C88C-4472-A5DB-D82173002D5B}
 		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+		SolutionGuid = {7DC6094F-C88C-4472-A5DB-D82173002D5B}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		HomeStreetInvest.Model\HomeStreetInvest.Model.projitems*{00782548-c1e4-4bc0-ab7e-8a9157845ebf}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
