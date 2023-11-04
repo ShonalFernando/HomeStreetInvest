@@ -1,30 +1,73 @@
-﻿namespace HousingIntel.Services
+﻿using HomeStreetInvest.HousingIntel.Services;
+using HomeStreetInvest.Model;
+
+namespace HousingIntel.Services
 {
     public class HouseIntelService
     {
+        LogService _LogService;
 
-        public void Predict()
+        public HouseIntelService(LogService logService)
         {
-            //Load sample data
-            var sampleData = new HouseIntelML.ModelInput()
+            _LogService = logService;
+        }
+
+        public float Predict(HousePrice HousePrice)
+        {
+            try
             {
-                Id = 1F,
-                MSSubClass = 20F,
-                MSZoning = @"RL",
-                LotArea = 9600F,
-                LotConfig = @"FR2",
-                BldgType = @"1Fam",
-                OverallCond = 8F,
-                YearBuilt = 1976F,
-                YearRemodAdd = 1976F,
-                Exterior1st = @"MetalSd",
-                BsmtFinSF2 = 0F,
-                TotalBsmtSF = 1262F,
-            };
+                var houseData = new HouseIntelML.ModelInput()
+                {
+                    Id = 0F,
+                    MSSubClass = HousePrice.mSSubClass,
+                    MSZoning = HousePrice.mSZoning.ToString(),
+                    LotArea = HousePrice.lotArea,
+                    LotConfig = HousePrice.lotConfig.ToString(),
+                    BldgType = HousePrice.bldgType.ToString(),
+                    OverallCond = HousePrice.overallCond,
+                    YearBuilt = HousePrice.yearBuilt,
+                    YearRemodAdd = HousePrice.yearRemodAdd,
+                    Exterior1st = HousePrice.exterior1st.ToString(),
+                    BsmtFinSF2 = HousePrice.bsmtFinSF2,
+                    TotalBsmtSF = HousePrice.totalBsmtSF
+                };                
+                
+                switch(HousePrice.bldgType)
+                {
+                    case BldgType.OneFam:
+                        houseData.BldgType = "1Fam";
+                        break;
+                    case BldgType.TwofmCon:
+                        houseData.BldgType = "2fmCon";
+                        break;
+                }
 
-            //Load model and predict output
-            var result = HouseIntelML.Predict(sampleData);
+                if(HousePrice.exterior1st == Exterior1st.Wd_Sdng)
+                {
+                    houseData.Exterior1st = "Wd Sdng";
+                }
 
+                if (HousePrice.mSZoning == MSZoning.C)
+                {
+                    houseData.MSZoning= "C (all)";
+                }
+
+                var result = HouseIntelML.Predict(houseData);
+                return result.Score;
+            }
+            catch (Exception IntellExc)
+            {
+                if(IntellExc.InnerException != null)
+                {
+                    _LogService.Log(IntellExc.InnerException.Message, LogWarning.Error);
+                }
+                else
+                {
+                    _LogService.Log(IntellExc.Message, LogWarning.Error);
+                }
+
+                return -1;
+            }
         }
     }
 }

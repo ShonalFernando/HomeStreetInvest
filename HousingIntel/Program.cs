@@ -1,3 +1,6 @@
+using HomeStreetInvest.HousingIntel.Services;
+using HousingIntel.Services;
+
 namespace HousingIntel
 {
     public class Program
@@ -12,6 +15,10 @@ namespace HousingIntel
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<HouseIntelService>();
+            builder.Services.AddScoped<LogDataStream>();
+            builder.Services.AddScoped<LogService>();
+
 
             var app = builder.Build();
 

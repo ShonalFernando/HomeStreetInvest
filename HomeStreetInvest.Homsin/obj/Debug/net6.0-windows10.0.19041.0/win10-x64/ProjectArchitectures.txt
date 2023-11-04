@@ -1,0 +1,1 @@
+D:\Source\Repos\HomeStreetInvest\HomeStreetInvest.Homsin\HomeStreetInvest.Homsin.csproj;x64

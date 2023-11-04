@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML.TimeSeries" Version="1.7.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+  <ItemGroup Label="GOOGL">
+    <None Include="GOOGL.consumption.cs">
+      <DependentUpon>GOOGL.mbconfig</DependentUpon>
+    </None>
+    <None Include="GOOGL.training.cs">
+      <DependentUpon>GOOGL.mbconfig</DependentUpon>
+    </None>
+    <None Include="GOOGL.zip">
+      <DependentUpon>GOOGL.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="AAPL">
+    <None Include="AAPL.consumption.cs">
+      <DependentUpon>AAPL.mbconfig</DependentUpon>
+    </None>
+    <None Include="AAPL.training.cs">
+      <DependentUpon>AAPL.mbconfig</DependentUpon>
+    </None>
+    <None Include="AAPL.zip">
+      <DependentUpon>AAPL.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="MSFT">
+    <None Include="MSFT.consumption.cs">
+      <DependentUpon>MSFT.mbconfig</DependentUpon>
+    </None>
+    <None Include="MSFT.training.cs">
+      <DependentUpon>MSFT.mbconfig</DependentUpon>
+    </None>
+    <None Include="MSFT.zip">
+      <DependentUpon>MSFT.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup Label="TSLA">
+    <None Include="TSLA.consumption.cs">
+      <DependentUpon>TSLA.mbconfig</DependentUpon>
+    </None>
+    <None Include="TSLA.training.cs">
+      <DependentUpon>TSLA.mbconfig</DependentUpon>
+    </None>
+    <None Include="TSLA.zip">
+      <DependentUpon>TSLA.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="..\HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems" Label="Shared" />
+  <Import Project="..\HomeStreetInvest.Model\HomeStreetInvest.Model.projitems" Label="Shared" />
+</Project>

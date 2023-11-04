@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.FastTree" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.TimeSeries" Version="1.7.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+  </ItemGroup>
+  <ItemGroup Label="HouseIntelML">
+    <None Include="HouseIntelML.consumption.cs">
+      <DependentUpon>HouseIntelML.mbconfig</DependentUpon>
+    </None>
+    <None Include="HouseIntelML.training.cs">
+      <DependentUpon>HouseIntelML.mbconfig</DependentUpon>
+    </None>
+    <None Include="HouseIntelML.zip">
+      <DependentUpon>HouseIntelML.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Intel\" />
+    <Folder Include="Helper\" />
+  </ItemGroup>
+  <Import Project="..\HomeStreetInvest.Model\HomeStreetInvest.Model.projitems" Label="Shared" />
+  <Import Project="..\HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems" Label="Shared" />
+</Project>

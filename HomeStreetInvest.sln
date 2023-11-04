@@ -2,11 +2,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hostrin", "Hostrin\Hostrin.csproj", "{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HousingIntel", "HousingIntel\HousingIntel.csproj", "{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeStreetInvest.HousingIntel", "HousingIntel\HomeStreetInvest.HousingIntel.csproj", "{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HomeStreetInvest.Model", "HomeStreetInvest.Model\HomeStreetInvest.Model.shproj", "{00782548-C1E4-4BC0-AB7E-8A9157845EBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeStreetInvest.Homsin", "HomeStreetInvest.Homsin\HomeStreetInvest.Homsin.csproj", "{CEBBE6B3-DF90-4CF6-9BA1-FCBAFF1B29D3}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "HomeStreetInvest.CommonHelper", "HomeStreetInvest.CommonTools\HomeStreetInvest.CommonHelper.shproj", "{5D30B6D8-6EB6-4582-BACF-EFDEED14CADD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeStreetInvest.HSISSXE", "HomeStreetInvest.HSISSXE\HomeStreetInvest.HSISSXE.csproj", "{58953B20-BEEF-4B68-80E0-5426550B32D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeStreetInvest.StockIntel", "HomeStreetInvest.StockIntel\HomeStreetInvest.StockIntel.csproj", "{3A91DA09-EB92-4B3B-A2AF-A353E8562F4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -14,25 +20,40 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9D51510D-0AD4-4E3B-B0BA-E627008ECF77}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16D6BC0F-39F2-4773-B0E6-51D0C0025C9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBBE6B3-DF90-4CF6-9BA1-FCBAFF1B29D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEBBE6B3-DF90-4CF6-9BA1-FCBAFF1B29D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEBBE6B3-DF90-4CF6-9BA1-FCBAFF1B29D3}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{CEBBE6B3-DF90-4CF6-9BA1-FCBAFF1B29D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEBBE6B3-DF90-4CF6-9BA1-FCBAFF1B29D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEBBE6B3-DF90-4CF6-9BA1-FCBAFF1B29D3}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{58953B20-BEEF-4B68-80E0-5426550B32D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58953B20-BEEF-4B68-80E0-5426550B32D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58953B20-BEEF-4B68-80E0-5426550B32D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58953B20-BEEF-4B68-80E0-5426550B32D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A91DA09-EB92-4B3B-A2AF-A353E8562F4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A91DA09-EB92-4B3B-A2AF-A353E8562F4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A91DA09-EB92-4B3B-A2AF-A353E8562F4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A91DA09-EB92-4B3B-A2AF-A353E8562F4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {7DC6094F-C88C-4472-A5DB-D82173002D5B}
+		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		HomeStreetInvest.Model\HomeStreetInvest.Model.projitems*{00782548-c1e4-4bc0-ab7e-8a9157845ebf}*SharedItemsImports = 13
+		HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems*{16d6bc0f-39f2-4773-b0e6-51d0c0025c9e}*SharedItemsImports = 5
+		HomeStreetInvest.Model\HomeStreetInvest.Model.projitems*{16d6bc0f-39f2-4773-b0e6-51d0c0025c9e}*SharedItemsImports = 5
+		HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems*{3a91da09-eb92-4b3b-a2af-a353e8562f4d}*SharedItemsImports = 5
+		HomeStreetInvest.Model\HomeStreetInvest.Model.projitems*{3a91da09-eb92-4b3b-a2af-a353e8562f4d}*SharedItemsImports = 5
+		HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems*{58953b20-beef-4b68-80e0-5426550b32d3}*SharedItemsImports = 5
+		HomeStreetInvest.Model\HomeStreetInvest.Model.projitems*{58953b20-beef-4b68-80e0-5426550b32d3}*SharedItemsImports = 5
+		HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems*{5d30b6d8-6eb6-4582-bacf-efdeed14cadd}*SharedItemsImports = 13
 	EndGlobalSection
 EndGlobal
