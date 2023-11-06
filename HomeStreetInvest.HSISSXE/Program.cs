@@ -13,7 +13,7 @@ namespace HomeStreetInvest.HSISSXE
             AppState.StartedTime = DateTime.Now;
             AppState.LastLogReadTime = DateTime.Now;
             HeadText.PrintHead();
-            bool isAPIRunning = CheckAPI().GetAwaiter().GetResult();
+            bool isAPIRunning = CheckAPI1().GetAwaiter().GetResult();
             if(isAPIRunning)
             {
                 LogService.Log("API Started", Model.LogWarning.DefaultLog);

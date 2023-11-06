@@ -30,8 +30,8 @@ namespace HousingIntel.Controllers
             return Ok();
         }
 
-            //Predict
-            [HttpPost("Predict")]
+        //Predict
+        [HttpPost("Predict")]
         public async Task<IActionResult> Predict(HousePrice HousePrice)
         {
             LogModel model = new LogModel();

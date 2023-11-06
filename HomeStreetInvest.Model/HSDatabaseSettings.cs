@@ -6,6 +6,6 @@
 
         public string DatabaseName { get; set; } = "HomeStreetInvest";
 
-        public string[] ShoppinzUsersCollectionName { get; set; } = new string[] { "Log"};
+        public string[] HSDBC { get; set; } = new string[] { "Log", "User"};
     }
 }

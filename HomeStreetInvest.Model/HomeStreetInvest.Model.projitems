@@ -13,5 +13,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)HousePrice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)StockPredictionRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UserAccount.cs" />
   </ItemGroup>
 </Project>
