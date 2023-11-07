@@ -874,8 +874,104 @@
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\car3.png">
       <PackagePath>wwwroot\assets\car3.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_1F.png">
+      <PackagePath>wwwroot\assets\cards\Cat_1F.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_2F.png">
+      <PackagePath>wwwroot\assets\cards\Cat_2F.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_Duplex.png">
+      <PackagePath>wwwroot\assets\cards\Cat_Duplex.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_TownHouse.png">
+      <PackagePath>wwwroot\assets\cards\Cat_TownHouse.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_TownHouseEnd.png">
+      <PackagePath>wwwroot\assets\cards\Cat_TownHouseEnd.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_Com.png">
+      <PackagePath>wwwroot\assets\cards\Est_Com.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_Farm.png">
+      <PackagePath>wwwroot\assets\cards\Est_Farm.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_HighDense.png">
+      <PackagePath>wwwroot\assets\cards\Est_HighDense.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_LowDense.png">
+      <PackagePath>wwwroot\assets\cards\Est_LowDense.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_MediumDense.png">
+      <PackagePath>wwwroot\assets\cards\Est_MediumDense.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Asb.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Asb.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Brick.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Brick.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_BrickWall.png">
+      <PackagePath>wwwroot\assets\cards\Ext_BrickWall.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_CBoard.png">
+      <PackagePath>wwwroot\assets\cards\Ext_CBoard.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Cinder.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Cinder.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_HardBoard.png">
+      <PackagePath>wwwroot\assets\cards\Ext_HardBoard.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_ImitStucco.png">
+      <PackagePath>wwwroot\assets\cards\Ext_ImitStucco.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Metal.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Metal.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Plywood.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Plywood.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_StoneWall.png">
+      <PackagePath>wwwroot\assets\cards\Ext_StoneWall.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Stucco.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Stucco.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_VinylSliding.png">
+      <PackagePath>wwwroot\assets\cards\Ext_VinylSliding.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_WoodShingles.png">
+      <PackagePath>wwwroot\assets\cards\Ext_WoodShingles.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_WoodSliding.png">
+      <PackagePath>wwwroot\assets\cards\Ext_WoodSliding.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_2Way.png">
+      <PackagePath>wwwroot\assets\cards\Loc_2Way.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_3Way.png">
+      <PackagePath>wwwroot\assets\cards\Loc_3Way.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_Corner.png">
+      <PackagePath>wwwroot\assets\cards\Loc_Corner.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_Culdesac.png">
+      <PackagePath>wwwroot\assets\cards\Loc_Culdesac.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_Inside.png">
+      <PackagePath>wwwroot\assets\cards\Loc_Inside.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\HeaderImage.png">
       <PackagePath>wwwroot\assets\HeaderImage.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\Homsin.png">
+      <PackagePath>wwwroot\assets\Homsin.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\HomsinLoader.gif">
+      <PackagePath>wwwroot\assets\HomsinLoader.gif</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\Preloader.png">
+      <PackagePath>wwwroot\assets\Preloader.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\StockHead.png">
       <PackagePath>wwwroot\assets\StockHead.png</PackagePath>

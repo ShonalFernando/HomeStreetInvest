@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-11-06T23:04:22.533</Modified>
+      <Modified>2023-11-07T12:30:14.626</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-11-06T16:06:21.403</Modified>
+      <Modified>2023-11-07T12:30:13.153</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.runtimeconfig.json">
       <PackagePath>Homsin.runtimeconfig.json</PackagePath>
@@ -43,15 +43,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.dll">
       <PackagePath>Homsin.dll</PackagePath>
-      <Modified>2023-11-06T23:04:17.462</Modified>
+      <Modified>2023-11-07T12:30:05.853</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Homsin.exe</PackagePath>
-      <Modified>2023-11-06T23:04:17.866</Modified>
+      <Modified>2023-11-07T12:30:06.226</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.deps.json">
       <PackagePath>Homsin.deps.json</PackagePath>
-      <Modified>2023-11-06T16:11:19.495</Modified>
+      <Modified>2023-11-07T12:30:11.753</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.20\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1165,9 +1165,137 @@
       <PackagePath>wwwroot\assets\car3.png</PackagePath>
       <Modified>2023-11-06T00:53:31.297</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_1F.png">
+      <PackagePath>wwwroot\assets\cards\Cat_1F.png</PackagePath>
+      <Modified>2023-11-07T03:08:31.978</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_2F.png">
+      <PackagePath>wwwroot\assets\cards\Cat_2F.png</PackagePath>
+      <Modified>2023-11-07T03:10:17.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_Duplex.png">
+      <PackagePath>wwwroot\assets\cards\Cat_Duplex.png</PackagePath>
+      <Modified>2023-11-07T03:13:25.396</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_TownHouse.png">
+      <PackagePath>wwwroot\assets\cards\Cat_TownHouse.png</PackagePath>
+      <Modified>2023-11-07T03:18:27.737</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Cat_TownHouseEnd.png">
+      <PackagePath>wwwroot\assets\cards\Cat_TownHouseEnd.png</PackagePath>
+      <Modified>2023-11-07T03:14:30.649</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_Com.png">
+      <PackagePath>wwwroot\assets\cards\Est_Com.png</PackagePath>
+      <Modified>2023-11-07T01:22:26.799</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_Farm.png">
+      <PackagePath>wwwroot\assets\cards\Est_Farm.png</PackagePath>
+      <Modified>2023-11-07T01:24:18.186</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_HighDense.png">
+      <PackagePath>wwwroot\assets\cards\Est_HighDense.png</PackagePath>
+      <Modified>2023-11-07T01:25:56.768</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_LowDense.png">
+      <PackagePath>wwwroot\assets\cards\Est_LowDense.png</PackagePath>
+      <Modified>2023-11-07T01:29:19.509</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Est_MediumDense.png">
+      <PackagePath>wwwroot\assets\cards\Est_MediumDense.png</PackagePath>
+      <Modified>2023-11-07T01:27:29.385</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Asb.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Asb.png</PackagePath>
+      <Modified>2023-11-07T06:09:38.566</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Brick.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Brick.png</PackagePath>
+      <Modified>2023-11-07T06:13:09.606</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_BrickWall.png">
+      <PackagePath>wwwroot\assets\cards\Ext_BrickWall.png</PackagePath>
+      <Modified>2023-11-07T07:04:23.974</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_CBoard.png">
+      <PackagePath>wwwroot\assets\cards\Ext_CBoard.png</PackagePath>
+      <Modified>2023-11-07T06:14:39.861</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Cinder.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Cinder.png</PackagePath>
+      <Modified>2023-11-07T06:12:33.387</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_HardBoard.png">
+      <PackagePath>wwwroot\assets\cards\Ext_HardBoard.png</PackagePath>
+      <Modified>2023-11-07T06:16:13.093</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_ImitStucco.png">
+      <PackagePath>wwwroot\assets\cards\Ext_ImitStucco.png</PackagePath>
+      <Modified>2023-11-07T06:17:56.329</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Metal.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Metal.png</PackagePath>
+      <Modified>2023-11-07T06:20:50.171</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Plywood.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Plywood.png</PackagePath>
+      <Modified>2023-11-07T06:22:14.985</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_StoneWall.png">
+      <PackagePath>wwwroot\assets\cards\Ext_StoneWall.png</PackagePath>
+      <Modified>2023-11-07T06:25:06.463</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Stucco.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Stucco.png</PackagePath>
+      <Modified>2023-11-07T06:19:31.018</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_VinylSliding.png">
+      <PackagePath>wwwroot\assets\cards\Ext_VinylSliding.png</PackagePath>
+      <Modified>2023-11-07T06:26:32.918</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_WoodShingles.png">
+      <PackagePath>wwwroot\assets\cards\Ext_WoodShingles.png</PackagePath>
+      <Modified>2023-11-07T06:29:49.621</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_WoodSliding.png">
+      <PackagePath>wwwroot\assets\cards\Ext_WoodSliding.png</PackagePath>
+      <Modified>2023-11-07T06:28:12.641</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_2Way.png">
+      <PackagePath>wwwroot\assets\cards\Loc_2Way.png</PackagePath>
+      <Modified>2023-11-07T02:45:27.302</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_3Way.png">
+      <PackagePath>wwwroot\assets\cards\Loc_3Way.png</PackagePath>
+      <Modified>2023-11-07T02:50:25.054</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_Corner.png">
+      <PackagePath>wwwroot\assets\cards\Loc_Corner.png</PackagePath>
+      <Modified>2023-11-07T02:40:00.513</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_Culdesac.png">
+      <PackagePath>wwwroot\assets\cards\Loc_Culdesac.png</PackagePath>
+      <Modified>2023-11-07T02:42:26.485</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Loc_Inside.png">
+      <PackagePath>wwwroot\assets\cards\Loc_Inside.png</PackagePath>
+      <Modified>2023-11-07T02:52:34.309</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\HeaderImage.png">
       <PackagePath>wwwroot\assets\HeaderImage.png</PackagePath>
       <Modified>2023-11-05T23:07:24.548</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\Homsin.png">
+      <PackagePath>wwwroot\assets\Homsin.png</PackagePath>
+      <Modified>2023-11-06T06:42:40.039</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\HomsinLoader.gif">
+      <PackagePath>wwwroot\assets\HomsinLoader.gif</PackagePath>
+      <Modified>2023-11-06T06:40:05.648</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\Preloader.png">
+      <PackagePath>wwwroot\assets\Preloader.png</PackagePath>
+      <Modified>2023-11-07T00:01:03.811</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\StockHead.png">
       <PackagePath>wwwroot\assets\StockHead.png</PackagePath>
@@ -1227,7 +1355,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
-      <Modified>2023-11-06T00:45:51.332</Modified>
+      <Modified>2023-11-07T00:01:30.110</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>

@@ -1,0 +1,102 @@
+﻿@page "/Housing/Estimations"
+
+@using System.Web;
+
+@inject NavigationManager NavigationManager
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/Housing/Library">Library</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Housing/Estimations">Estimate</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Sell</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">More</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid" style="background-color:#4C86A8; padding-top:20px; padding-bottom:20px;">
+    <div class="row">
+        <div class="col-sm-10">
+            <nav aria-label="breadcrumb">
+                <button type="button" class="@(WizPage != 0 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(0))">
+                    Zoning <span class="badge badge-light">1</span>
+                </button>
+                <button type="button" class="@(WizPage != 1 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(1))">
+                    Location <span class="badge badge-light">2</span>
+                </button>
+                <button type="button" class="@(WizPage != 2 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(2))">
+                    Category <span class="badge badge-light">3</span>
+                </button>
+                <button type="button" class="@(WizPage != 3 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(3))">
+                    Numbers <span class="badge badge-light">4</span>
+                </button>
+                <button type="button" class="@(WizPage != 4 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(4))">
+                    Exterior <span class="badge badge-light">5</span>
+                </button>
+                <button type="button" class="@(WizPage != 5 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(5))">
+                    Results <span class="badge badge-light">6</span>
+                </button>
+            </nav>
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+@if (WizPage == 0)
+{
+    <EstimationZoning></EstimationZoning>
+}
+else if (WizPage == 1)
+{
+    <EstimationLocation></EstimationLocation>
+}
+else if (WizPage == 2)
+{
+    <EstimationCategory></EstimationCategory>
+}
+else if (WizPage == 3)
+{
+    <EstimationNumericals></EstimationNumericals>
+}
+else if (WizPage == 4)
+{
+    <EstimationExterior></EstimationExterior>
+}
+else if (WizPage == 5)
+{
+    <EstimationLocation></EstimationLocation>
+}
+
+@code 
+{
+    int WizPage = 4;
+
+    //Navigate to a Location
+    private void NavigateForward(int ToLocation)
+    {
+        if(ToLocation<= WizPage)
+        {
+            WizPage = ToLocation;
+            StateHasChanged();
+        }
+
+    }
+
+    protected override void OnInitialized()
+    {
+
+    }
+}

@@ -1,0 +1,103 @@
+﻿<div class="container-fluid">
+    <div class="row">
+        <div class="form-group">
+            <label for="yearbuilt">Year Built</label>
+            <input type="number" class="form-control" id="yearbuilt" placeholder="eg: 2007">
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="yearren">Year Renovated</label>
+            <input type="number" class="form-control" id="yearren" aria-describedby="yearren" placeholder="eg: 2016">
+            <small id="yearren" class="form-text text-muted">If the house is not renovated, then leave blank or enter the built year</small>
+        </div>
+
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="BsmtFinSF2">Finished Basement Area in Sqrft</label>
+            <input type="number" class="form-control" id="BsmtFinSF2" aria-describedby="BsmtFinSF2" placeholder="eg: 520">
+            <small id="BsmtFinSF2" class="form-text text-muted">
+                This field represents the total finished square footage
+                of a second area within the basement of a property.
+                In some houses, the basement may have multiple finished areas,
+                and this field quantifies the square footage of the second finished space
+            </small>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="TotalBsmtSF">Basement Area in Sqrft</label>
+            <input type="number" class="form-control" id="TotalBsmtSF" aria-describedby="TotalBsmtSF" placeholder="eg: 1520">
+            <small id="TotalBsmtSF" class="form-text text-muted">
+                This field represents the total square footage of the entire basement 
+                in a property. It includes all finished and unfinished areas within the
+                basement, providing the overall size of the basement in square feet.
+                This is an essential metric for assessing the size and utility of the 
+                basement space in a property
+            </small>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="TotalBsmtSF">Basement Area in Sqrft</label>
+            <input type="number" class="form-control" id="TotalBsmtSF" aria-describedby="TotalBsmtSF" placeholder="eg: 1520">
+            <small id="TotalBsmtSF" class="form-text text-muted">
+                This field represents the total square footage of the entire basement
+                in a property. It includes all finished and unfinished areas within the
+                basement, providing the overall size of the basement in square feet.
+                This is an essential metric for assessing the size and utility of the
+                basement space in a property
+            </small>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="larea">Land Area in sqft</label>
+            <input type="number" class="form-control" id="larea" aria-describedby="larea" placeholder="eg: 8000">
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="OverallCond" class="form-label">Overall Condition: Good</label>
+            <input type="range" class="form-range" min="1" max="10" step="1" id="OverallCond">
+        </div>
+    </div>
+
+    <br/>
+</div>
+
+<br/>
+<br/>
+
+<div class="container-fluid" style="background-color:#4C86A8; padding-top:20px; padding-bottom:20px;">
+    <div class="row">
+        <div class="col-sm-10">
+            Get an Estimation for your House, Appartment,... &nbsp; <button type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/double-right.png" alt="double-right" /></button>
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>
+
+@code {
+
+}
