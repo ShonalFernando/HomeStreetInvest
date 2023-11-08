@@ -1,4 +1,11 @@
-﻿<div class="container-fluid" style="max-width:1000px;">
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+@using Homsin.Session;
+
+@inject HouseIntelService HouseIntelService
+@inject NavigationManager NavigationManager
+
+<div class="container-fluid" style="max-width:1000px;">
     <div class="row">
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
@@ -6,7 +13,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Low Density Residence</h5>
                     <p class="card-text">Specifically designed for single-family homes with larger lots in residential areas</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedZoning != 3 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(MSZoning.RL))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> 
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -18,7 +28,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Medium Density</h5>
                     <p class="card-text">Permits medium-density housing, including townhouses and multi-family dwellings</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedZoning != 4 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(MSZoning.RM))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> 
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -30,7 +43,10 @@
                 <div class="card-body">
                     <h5 class="card-title">High Density</h5>
                     <p class="card-text">For high-density housing developments, such as apartment complexes</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedZoning != 2 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(MSZoning.RH))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> 
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -47,7 +63,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Farm Village</h5>
                     <p class="card-text">Farmhouses with or without Farms, Suitable for agricultural or rural residential areas with specific rules and regulations</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedZoning != 1 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(MSZoning.FV))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> 
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -59,7 +78,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Commercial</h5>
                     <p class="card-text">Allows for various commercial and mixed-use properties like businesses and retail establishments</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedZoning != 0 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(MSZoning.C))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> 
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -71,6 +93,15 @@
 <br />
 <br />
 
-@code {
+@code 
+{
+    private int SelectedZoning { get; set; }
 
+    private void PrefSelected(MSZoning zoningPref)
+    {
+        HouseIntelService.housePrice.mSZoning = zoningPref;
+        SelectedZoning = (int)HouseIntelService.housePrice.mSZoning;
+        HouseIntelService.currentWizardPage = 1;
+        StateHasChanged();
+    }
 }

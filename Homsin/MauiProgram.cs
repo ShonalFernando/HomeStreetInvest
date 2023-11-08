@@ -1,4 +1,5 @@
 ﻿using Homsin.Data;
+using Homsin.Service;
 using Microsoft.AspNetCore.Components.WebView.Maui;
 
 namespace Homsin
@@ -16,6 +17,7 @@ namespace Homsin
                 });
 
             builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddScoped<HouseIntelService>();
 #if DEBUG
 		builder.Services.AddBlazorWebViewDeveloperTools();
 #endif

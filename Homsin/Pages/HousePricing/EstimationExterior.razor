@@ -1,4 +1,8 @@
-﻿<div class="container-fluid" style="max-width:1000px;">
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+@inject HouseIntelService HouseIntelService
+
+<div class="container-fluid" style="max-width:1000px;">
     <div class="row">
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
@@ -6,7 +10,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Asbestos</h5>
                     <p class="card-text">Asphalt shingle siding, common in roofing materials, offering a cost-effective and versatile choice for exterior cladding</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 0 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.AsbShng))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -18,7 +25,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Brick Face</h5>
                     <p class="card-text">Brick-faced exterior, combining the strength of brick with other construction materials for a balanced finish and a classic Finish.</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 3 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.BrkFace))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -30,7 +40,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Cement Board</h5>
                     <p class="card-text">Cement board siding, a durable and moisture-resistant option that emulates the look of wood or stucco</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 5 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.CemntBd))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -47,7 +60,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Cinder Block</h5>
                     <p class="card-text">Cinder block siding, composed of concrete blocks, providing durability and structural support</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 4 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.CBlock))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -59,7 +75,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Hard Board</h5>
                     <p class="card-text">Hardboard is a natural wood siding. Hardboard is a engineered wood siding with versatility in design</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 6 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.HdBoard))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -71,7 +90,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Synthetic Stucco</h5>
                     <p class="card-text">Synthetic alternative to traditional stucco, offering similar aesthetics with added durability</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 7 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.ImStucc))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -88,7 +110,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Metal Sliding</h5>
                     <p class="card-text">Metal siding, modern and resilient, commonly used for contemporary architectural designs</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 8 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.MetalSd))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -100,7 +125,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Plywood</h5>
                     <p class="card-text">Plywood siding, providing structural integrity and serving as an exterior sheathing material</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 9 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.Plywood))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -112,7 +140,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Stucco</h5>
                     <p class="card-text">Plaster-like material that lends a classic Mediterranean or Southwestern look</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 11 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.Stucco))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -129,7 +160,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Vinyl Sliding</h5>
                     <p class="card-text">Vinyl siding, low-maintenance and cost-effective with a range of design options</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 12 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.VinylSd))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -141,7 +175,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Wood Sliding</h5>
                     <p class="card-text">Wood siding, offering a natural and warm appearance, often used for a traditional or rustic look</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 13 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.Wd_Sdng))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -153,7 +190,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Wood Shingles</h5>
                     <p class="card-text">Provides a distinctive appearance and is commonly associated with coastal and cottage-style homes</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 14 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.WdShing))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -161,7 +201,7 @@
         </div>
     </div>
 
-    <br/>
+    <br />
 
     <div class="row">
         <div class="col-sm-3">
@@ -170,7 +210,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Stone Wall</h5>
                     <p class="card-text">The lot has frontage on two sides, typically facing two different streets or roadways</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 10 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.Stone))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -182,17 +225,44 @@
                 <div class="card-body">
                     <h5 class="card-title">Brick Wall</h5>
                     <p class="card-text">A traditional and sturdy, used for a classic and timeless look. The Wall is usually rendered.</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Exterior</a>
+                    <button type="button" class="@(SelectedExt != 2 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.BrkComm))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-3">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/cards/Ext_Ashp.png" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">Ashpalt Shingles</h5>
+                    <p class="card-text">Ashpalt Shingles are Exterior cladding made from asphalt shingles, a common roofing material.</p>
+                    <button type="button" class="@(SelectedExt != 1 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(Exterior1st.AsphShn))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />
+                        &nbsp Select Zoning
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1">
         </div>
     </div>
 </div>
 <br />
 <br />
 
-@code {
+@code 
+{
+    private int SelectedExt { get; set; }
 
+    private void PrefSelected(Exterior1st exterior)
+    {
+        HouseIntelService.housePrice.exterior1st = exterior;
+        SelectedExt = (int)HouseIntelService.housePrice.exterior1st;
+        HouseIntelService.currentWizardPage = 4;
+        StateHasChanged();
+    }
 }

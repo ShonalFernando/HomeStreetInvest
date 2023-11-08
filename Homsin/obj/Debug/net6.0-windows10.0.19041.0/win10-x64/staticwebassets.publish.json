@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OZT3OGjU7i07Yl5A04lblGUEJXI25x2QZjx1ZAc+pX0=",
+  "Hash": "ocTtldo1bnNuay+vwlVtGCnDAFLZyi3Asgk2t/BiNw4=",
   "Source": "Homsin",
   "BasePath": "/",
   "Mode": "Root",
@@ -270,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\cards\\Ext_Asb.png"
+    },
+    {
+      "Identity": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Ashp.png",
+      "SourceId": "Homsin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/cards/Ext_Ashp.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\cards\\Ext_Ashp.png"
     },
     {
       "Identity": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Brick.png",

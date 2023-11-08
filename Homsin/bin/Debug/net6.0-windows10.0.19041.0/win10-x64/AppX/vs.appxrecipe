@@ -29,29 +29,29 @@
     <AppXManifest Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-11-07T12:30:14.626</Modified>
+      <Modified>2023-11-08T11:26:25.783</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-11-07T12:30:13.153</Modified>
+      <Modified>2023-11-08T10:36:20.760</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.runtimeconfig.json">
       <PackagePath>Homsin.runtimeconfig.json</PackagePath>
-      <Modified>2023-11-06T16:11:19.921</Modified>
+      <Modified>2023-11-08T01:05:58.137</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.dll">
       <PackagePath>Homsin.dll</PackagePath>
-      <Modified>2023-11-07T12:30:05.853</Modified>
+      <Modified>2023-11-08T11:26:20.278</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Homsin.exe</PackagePath>
-      <Modified>2023-11-07T12:30:06.226</Modified>
+      <Modified>2023-11-08T11:26:22.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.deps.json">
       <PackagePath>Homsin.deps.json</PackagePath>
-      <Modified>2023-11-07T12:30:11.753</Modified>
+      <Modified>2023-11-08T01:05:57.631</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.20\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -969,6 +969,18 @@
       <PackagePath>WinRT.Runtime.dll</PackagePath>
       <Modified>2023-06-09T20:10:26.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\awssdk.core\3.7.100.14\lib\netcoreapp3.1\AWSSDK.Core.dll">
+      <PackagePath>AWSSDK.Core.dll</PackagePath>
+      <Modified>2022-11-09T16:47:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\awssdk.securitytoken\3.7.100.14\lib\netcoreapp3.1\AWSSDK.SecurityToken.dll">
+      <PackagePath>AWSSDK.SecurityToken.dll</PackagePath>
+      <Modified>2022-11-09T16:47:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\dnsclient\1.6.1\lib\net5.0\DnsClient.dll">
+      <PackagePath>DnsClient.dll</PackagePath>
+      <Modified>2022-06-10T20:37:22.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.aspnetcore.authorization\6.0.8\lib\net6.0\Microsoft.AspNetCore.Authorization.dll">
       <PackagePath>Microsoft.AspNetCore.Authorization.dll</PackagePath>
       <Modified>2022-07-14T01:10:14.000</Modified>
@@ -1121,9 +1133,37 @@
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.Net.dll</PackagePath>
       <Modified>2022-09-07T21:54:34.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\mongodb.bson\2.22.0\lib\netstandard2.1\MongoDB.Bson.dll">
+      <PackagePath>MongoDB.Bson.dll</PackagePath>
+      <Modified>2023-10-09T21:56:44.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\mongodb.driver\2.22.0\lib\netstandard2.1\MongoDB.Driver.dll">
+      <PackagePath>MongoDB.Driver.dll</PackagePath>
+      <Modified>2023-10-09T21:56:54.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\mongodb.driver.core\2.22.0\lib\netstandard2.1\MongoDB.Driver.Core.dll">
+      <PackagePath>MongoDB.Driver.Core.dll</PackagePath>
+      <Modified>2023-10-09T21:56:48.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\mongodb.libmongocrypt\1.8.0\lib\netstandard2.1\MongoDB.Libmongocrypt.dll">
+      <PackagePath>MongoDB.Libmongocrypt.dll</PackagePath>
+      <Modified>2023-06-01T17:28:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\sharpcompress\0.30.1\lib\net5.0\SharpCompress.dll">
+      <PackagePath>SharpCompress.dll</PackagePath>
+      <Modified>2021-11-22T09:21:32.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\snappier\1.0.0\lib\net5.0\Snappier.dll">
+      <PackagePath>Snappier.dll</PackagePath>
+      <Modified>2021-01-23T17:43:32.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\system.io.pipelines\6.0.3\lib\net6.0\System.IO.Pipelines.dll">
       <PackagePath>System.IO.Pipelines.dll</PackagePath>
       <Modified>2022-04-13T17:49:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\zstdsharp.port\0.6.2\lib\net6.0\ZstdSharp.dll">
+      <PackagePath>ZstdSharp.dll</PackagePath>
+      <Modified>2022-08-02T19:04:30.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.graphics.win2d\1.0.3.1\runtimes\win10-x64\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
@@ -1132,6 +1172,10 @@
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.windowsappsdk\1.1.5\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2022-09-07T21:54:36.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\mongodb.libmongocrypt\1.8.0\runtimes\win\native\mongocrypt.dll">
+      <PackagePath>mongocrypt.dll</PackagePath>
+      <Modified>2023-05-09T13:04:40.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.maui.controls.ref.win\6.0.553\ref\net6.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>
@@ -1208,6 +1252,10 @@
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Asb.png">
       <PackagePath>wwwroot\assets\cards\Ext_Asb.png</PackagePath>
       <Modified>2023-11-07T06:09:38.566</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Ashp.png">
+      <PackagePath>wwwroot\assets\cards\Ext_Ashp.png</PackagePath>
+      <Modified>2023-11-08T06:57:22.148</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\cards\Ext_Brick.png">
       <PackagePath>wwwroot\assets\cards\Ext_Brick.png</PackagePath>

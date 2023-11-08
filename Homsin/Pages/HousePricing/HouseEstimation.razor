@@ -1,8 +1,11 @@
 ﻿@page "/Housing/Estimations"
 
 @using System.Web;
+@using Homsin.Service;
+@using static Homsin.Service.HouseIntelService;
 
 @inject NavigationManager NavigationManager
+@inject HouseIntelService HouseIntelService
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -27,27 +30,32 @@
     <div class="row">
         <div class="col-sm-10">
             <nav aria-label="breadcrumb">
-                <button type="button" class="@(WizPage != 0 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(0))">
+                <button type="button" class="@(HouseIntelService.currentWizardPage != 0 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(0))">
                     Zoning <span class="badge badge-light">1</span>
                 </button>
-                <button type="button" class="@(WizPage != 1 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(1))">
+                <button type="button" class="@(HouseIntelService.currentWizardPage != 1 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(1))">
                     Location <span class="badge badge-light">2</span>
                 </button>
-                <button type="button" class="@(WizPage != 2 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(2))">
+                <button type="button" class="@(HouseIntelService.currentWizardPage != 2 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(2))">
                     Category <span class="badge badge-light">3</span>
                 </button>
-                <button type="button" class="@(WizPage != 3 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(3))">
+                <button type="button" class="@(HouseIntelService.currentWizardPage != 3 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(4))">
+                    Exterior <span class="badge badge-light">5</span>
+                </button>                
+                <button type="button" class="@(HouseIntelService.currentWizardPage != 4 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(3))">
                     Numbers <span class="badge badge-light">4</span>
                 </button>
-                <button type="button" class="@(WizPage != 4 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(4))">
-                    Exterior <span class="badge badge-light">5</span>
-                </button>
-                <button type="button" class="@(WizPage != 5 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(5))">
+                <button type="button" class="@(HouseIntelService.currentWizardPage != 5 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => NavigateForward(5))">
                     Results <span class="badge badge-light">6</span>
                 </button>
             </nav>
         </div>
-        <div class="col-sm-2">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-1">
+            <button type="button" class="btn btn-info" @onclick="@(() => NavigateForward(WizPage+1))">
+                Next
+            </button>
         </div>
     </div>
 </div>
@@ -55,48 +63,62 @@
 <br />
 <br />
 
-@if (WizPage == 0)
+@HouseIntelService.currentWizardPage
+@HouseIntelService.housePrice.mSZoning
+@HouseIntelService.housePrice.lotConfig
+@HouseIntelService.housePrice.bldgType
+@HouseIntelService.housePrice.exterior1st
+
+@HouseIntelService.housePrice.overallCond
+@HouseIntelService.housePrice.lotArea
+@HouseIntelService.housePrice.yearBuilt
+@HouseIntelService.housePrice.bsmtFinSF2
+@HouseIntelService.housePrice.totalBsmtSF
+@HouseIntelService.housePrice.totalBsmtSF
+@HouseIntelService.housePrice.yearRemodAdd
+
+@if (HouseIntelService.currentWizardPage == (int)HouseIntelService.WizardPage.Zoning)
 {
     <EstimationZoning></EstimationZoning>
 }
-else if (WizPage == 1)
+else if (HouseIntelService.currentWizardPage == (int)HouseIntelService.WizardPage.Location)
 {
     <EstimationLocation></EstimationLocation>
 }
-else if (WizPage == 2)
+else if (HouseIntelService.currentWizardPage == (int)HouseIntelService.WizardPage.Category)
 {
     <EstimationCategory></EstimationCategory>
 }
-else if (WizPage == 3)
+else if (HouseIntelService.currentWizardPage == (int)HouseIntelService.WizardPage.Numericals)
 {
     <EstimationNumericals></EstimationNumericals>
 }
-else if (WizPage == 4)
+else if (HouseIntelService.currentWizardPage == (int)HouseIntelService.WizardPage.Exterior)
 {
     <EstimationExterior></EstimationExterior>
 }
-else if (WizPage == 5)
+else if (HouseIntelService.currentWizardPage == (int)HouseIntelService.WizardPage.Results)
 {
-    <EstimationLocation></EstimationLocation>
+    <EstimationResults></EstimationResults> @*resultpage*@
 }
 
 @code 
 {
-    int WizPage = 4;
+    int WizPage;
 
     //Navigate to a Location
     private void NavigateForward(int ToLocation)
     {
         if(ToLocation<= WizPage)
         {
-            WizPage = ToLocation;
+            HouseIntelService.currentWizardPage = (int)(WizardPage)ToLocation;
+            WizPage = (int)HouseIntelService.currentWizardPage;
             StateHasChanged();
         }
-
     }
 
     protected override void OnInitialized()
     {
-
+        WizPage = (int)HouseIntelService.currentWizardPage;
     }
 }

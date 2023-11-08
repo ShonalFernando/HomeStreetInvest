@@ -386,3 +386,14 @@ D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win
 D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AWSSDK.Core.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AWSSDK.SecurityToken.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\DnsClient.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MongoDB.Bson.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MongoDB.Driver.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MongoDB.Driver.Core.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\MongoDB.Libmongocrypt.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\SharpCompress.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Snappier.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\ZstdSharp.dll
+D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\mongocrypt.dll

@@ -1,4 +1,9 @@
-﻿<div class="container-fluid" style="max-width:1000px;">
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+
+@inject HouseIntelService HouseIntelService
+
+<div class="container-fluid" style="max-width:1000px;">
     <div class="row">
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
@@ -6,7 +11,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Two Frontage</h5>
                     <p class="card-text">The lot has frontage on two sides, typically facing two different streets or roadways</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedLoc != 2 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(LotConfig.FR2))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -18,7 +25,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Three Frontage</h5>
                     <p class="card-text">The lot has frontage on three sides, often facing three different streets or roadways</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedLoc != 3 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(LotConfig.FR3))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -30,7 +39,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Corner</h5>
                     <p class="card-text">The lot is located at the corner of two intersecting streets, providing more than one street frontage</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedLoc != 0 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(LotConfig.Corner))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -47,7 +58,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Cul-de-Sac</h5>
                     <p class="card-text">A Cul-de-Sac neighbourhood is situated at the end of a dead-end street or in a cul-de-sac, which typically means less traffic and a quieter location</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedLoc != 1 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(LotConfig.CulDSac))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -59,7 +72,9 @@
                 <div class="card-body">
                     <h5 class="card-title">Inside</h5>
                     <p class="card-text">The lot is located within a block or within a neighborhood and does not have any special frontage characteristics like being on a corner or a cul-de-sac</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedLoc != 4 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(LotConfig.Inside))">
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   &nbsp Select Zoning
+                    </button>
                 </div>
             </div>
         </div>
@@ -72,5 +87,13 @@
 <br />
 
 @code {
+    private int SelectedLoc { get; set; }
 
+    private void PrefSelected(LotConfig lotConfig)
+    {
+        HouseIntelService.housePrice.lotConfig = lotConfig;
+        SelectedLoc = (int)HouseIntelService.housePrice.lotConfig;
+        HouseIntelService.currentWizardPage = 2;
+        StateHasChanged();
+    }
 }

@@ -1,4 +1,8 @@
-﻿<div class="container-fluid" style="max-width:1000px;">
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+@inject HouseIntelService HouseIntelService
+
+<div class="container-fluid" style="max-width:1000px;">
     <div class="row">
         <div class="col-sm-3">
             <div class="card" style="width: 18rem;">
@@ -6,7 +10,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Single Family House</h5>
                     <p class="card-text">A Single Family is the most basic type of House. A Single Family House is a simple house which is a standalone, single-family residential dwelling, which is a house designed for only one family to occupy.</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedCat != 0 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(BldgType.OneFam))">                        
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   
+                        &nbsp Select Zoning                    
+                    </button>
                 </div>
             </div>
         </div>
@@ -18,7 +25,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Dual Family House</h5>
                     <p class="card-text">This typically refers to a building originally designed for a single-family home that has been converted into a two-family dwelling. It may have separate living spaces for two families.</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedCat != 1 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(BldgType.TwofmCon))"> 
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   
+                        &nbsp Select Zoning                    
+                    </button>
                 </div>
             </div>
         </div>
@@ -30,7 +40,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Duplex</h5>
                     <p class="card-text">A duplex is a residential building divided into two separate living units, each with its own entrance, often side by side or one above the other. It is designed for two households.</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedCat != 2 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(BldgType.Duplex))">                        
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   
+                        &nbsp Select Zoning                    
+                    </button>
                 </div>
             </div>
         </div>
@@ -47,7 +60,10 @@
                 <div class="card-body">
                     <h5 class="card-title">Townhouse </h5>
                     <p class="card-text">A townhouse is a type of residential building characterized by multiple units attached side by side in a row or sometimes in a small cluster, each with its own entrance. Townhouses share walls with neighboring units</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedCat != 3 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(BldgType.Twnhs))">              
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   
+                        nbsp Select Zoning                    
+                    </button>
                 </div>
             </div>
         </div>
@@ -59,23 +75,14 @@
                 <div class="card-body">
                     <h5 class="card-title">Townhouse End Unit</h5>
                     <p class="card-text">A Townhouse End Unit is a house that is located at the end of a row of townhouses, meaning it may have only one shared wall with a neighboring unit. A townhouse end unitis more likely to be placed nearer to a end of a city or a town.</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
+                    <button type="button" class="@(SelectedCat != 4 ? "btn btn-outline-info" : "btn btn-info")" @onclick="@(() => PrefSelected(BldgType.TwnhsE))">   
+                        <img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" />   
+                        &nbsp Select Zoning                    
+                    </button>
                 </div>
             </div>
         </div>
-        <div class="col-sm-1">
-        </div>
-        <div class="col-sm-3">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/cards/Cat_Duplex.png" alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title">Duplex</h5>
-                    <p class="card-text">A duplex is a residential building divided into two separate living units, each with its own entrance, often side by side or one above the other. It is designed for two households.</p>
-                    <a href="#" class="btn btn-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/checkmark--v1.png" alt="checkmark--v1" /> &nbsp Select Zoning</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-1">
+        <div class="col-sm-5">
         </div>
     </div>
 </div>
@@ -83,6 +90,15 @@
 <br />
 <br />
 
-@code {
+@code 
+{
+    private int SelectedCat { get; set; }
 
+    private void PrefSelected(BldgType bldgType)
+    {
+        HouseIntelService.housePrice.bldgType = bldgType;
+        SelectedCat = (int)HouseIntelService.housePrice.bldgType;
+        HouseIntelService.currentWizardPage = 3;
+        StateHasChanged();
+    }
 }

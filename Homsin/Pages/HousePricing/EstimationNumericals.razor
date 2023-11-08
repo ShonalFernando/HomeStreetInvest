@@ -1,8 +1,12 @@
-﻿<div class="container-fluid">
+﻿@using Homsin.Service;
+
+@inject HouseIntelService HouseIntelService
+
+<div class="container-fluid">
     <div class="row">
         <div class="form-group">
             <label for="yearbuilt">Year Built</label>
-            <input type="number" class="form-control" id="yearbuilt" placeholder="eg: 2007">
+            <input type="number" class="form-control" id="yearbuilt" placeholder="eg: 2007" @bind="_yearBuilt">
         </div>
     </div>
 
@@ -11,7 +15,7 @@
     <div class="row">
         <div class="form-group">
             <label for="yearren">Year Renovated</label>
-            <input type="number" class="form-control" id="yearren" aria-describedby="yearren" placeholder="eg: 2016">
+            <input type="number" class="form-control" id="yearren" aria-describedby="yearren" placeholder="eg: 2016" @bind="_yearRemodAdd">
             <small id="yearren" class="form-text text-muted">If the house is not renovated, then leave blank or enter the built year</small>
         </div>
 
@@ -22,7 +26,7 @@
     <div class="row">
         <div class="form-group">
             <label for="BsmtFinSF2">Finished Basement Area in Sqrft</label>
-            <input type="number" class="form-control" id="BsmtFinSF2" aria-describedby="BsmtFinSF2" placeholder="eg: 520">
+            <input type="number" class="form-control" id="BsmtFinSF2" aria-describedby="BsmtFinSF2" placeholder="eg: 520" @bind="_bsmtFinSF2">
             <small id="BsmtFinSF2" class="form-text text-muted">
                 This field represents the total finished square footage
                 of a second area within the basement of a property.
@@ -53,7 +57,7 @@
     <div class="row">
         <div class="form-group">
             <label for="TotalBsmtSF">Basement Area in Sqrft</label>
-            <input type="number" class="form-control" id="TotalBsmtSF" aria-describedby="TotalBsmtSF" placeholder="eg: 1520">
+            <input type="number" class="form-control" id="TotalBsmtSF" aria-describedby="TotalBsmtSF" placeholder="eg: 1520" @bind="_totalBsmtSF">
             <small id="TotalBsmtSF" class="form-text text-muted">
                 This field represents the total square footage of the entire basement
                 in a property. It includes all finished and unfinished areas within the
@@ -69,7 +73,7 @@
     <div class="row">
         <div class="form-group">
             <label for="larea">Land Area in sqft</label>
-            <input type="number" class="form-control" id="larea" aria-describedby="larea" placeholder="eg: 8000">
+            <input type="number" class="form-control" id="larea" aria-describedby="larea" placeholder="eg: 8000" @bind="_lotArea">
         </div>
     </div>
 
@@ -78,10 +82,24 @@
     <div class="row">
         <div class="form-group">
             <label for="OverallCond" class="form-label">Overall Condition: Good</label>
-            <input type="range" class="form-range" min="1" max="10" step="1" id="OverallCond">
+            <input type="range" class="form-range" min="1" max="10" step="1" id="OverallCond" @bind="_overallCond">
         </div>
     </div>
-
+    <div class="row">
+        <div class="col-sm-2">
+            <span style="color:#BB6B00;">Bad</span>
+        </div>
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-2">
+            <span style="color:#BB6B00;text-align: center;">Intermediate</span>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-1">
+            <span style="color:#BB6B00; text-align: right;">Good</span>
+        </div>
+    </div>
     <br/>
 </div>
 
@@ -91,13 +109,35 @@
 <div class="container-fluid" style="background-color:#4C86A8; padding-top:20px; padding-bottom:20px;">
     <div class="row">
         <div class="col-sm-10">
-            Get an Estimation for your House, Appartment,... &nbsp; <button type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/double-right.png" alt="double-right" /></button>
+            Get an Estimation for your House, Appartment,... &nbsp; <button @onclick="PrefSelected" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/double-right.png" alt="double-right" /></button>
         </div>
         <div class="col-sm-2">
         </div>
     </div>
 </div>
 
-@code {
+@code 
+{
+    private float _mSSubClass { get; set; }
+    private float _lotArea { get; set; }
+    private float _overallCond { get; set; }
+    private float _yearBuilt { get; set; }
+    private float _yearRemodAdd { get; set; }
+    private float _bsmtFinSF2 { get; set; }
+    private float _totalBsmtSF { get; set; }
+
+    private void PrefSelected()
+    {
+        HouseIntelService.housePrice.yearBuilt = _yearBuilt;
+        HouseIntelService.housePrice.yearRemodAdd = _yearRemodAdd;
+        HouseIntelService.housePrice.bsmtFinSF2 = _bsmtFinSF2;
+        HouseIntelService.housePrice.totalBsmtSF = _totalBsmtSF;
+        HouseIntelService.housePrice.lotArea = _lotArea;
+        HouseIntelService.housePrice.overallCond = _overallCond;
+        HouseIntelService.housePrice.yearBuilt = _yearBuilt;
+
+        HouseIntelService.currentWizardPage = 5;
+        StateHasChanged();
+    }
 
 }
