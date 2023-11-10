@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ve/rHu5Lfvw5S2lfT30ED+U99v6XxHzzTvNYIC4AJDM=",
+  "Hash": "NAX2IZA9FybZZQQthOiHdt6iShjWGQBXMsrb4PAKjRk=",
   "Source": "Homsin",
   "BasePath": "/",
   "Mode": "Root",
@@ -644,6 +644,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\HomsinLoader.gif"
+    },
+    {
+      "Identity": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\icons8-loading.gif",
+      "SourceId": "Homsin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/icons8-loading.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\icons8-loading.gif"
     },
     {
       "Identity": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\Preloader.png",

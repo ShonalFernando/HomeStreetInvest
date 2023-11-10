@@ -9,6 +9,18 @@
       "PackagePath": "staticwebassets\\assets\\HeaderImage.png"
     },
     {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\Homsin.png",
+      "PackagePath": "staticwebassets\\assets\\Homsin.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\HomsinLoader.gif",
+      "PackagePath": "staticwebassets\\assets\\HomsinLoader.gif"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\Preloader.png",
+      "PackagePath": "staticwebassets\\assets\\Preloader.png"
+    },
+    {
       "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\StockHead.png",
       "PackagePath": "staticwebassets\\assets\\StockHead.png"
     },
@@ -19,6 +31,130 @@
     {
       "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\car3.png",
       "PackagePath": "staticwebassets\\assets\\car3.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_1F.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_1F.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_2F.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_2F.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_Duplex.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_Duplex.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_TownHouse.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_TownHouse.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_TownHouseEnd.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_TownHouseEnd.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_Com.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_Com.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_Farm.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_Farm.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_HighDense.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_HighDense.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_LowDense.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_LowDense.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_MediumDense.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_MediumDense.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Asb.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Asb.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Ashp.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Ashp.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Brick.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Brick.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_BrickWall.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_BrickWall.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_CBoard.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_CBoard.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Cinder.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Cinder.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_HardBoard.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_HardBoard.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_ImitStucco.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_ImitStucco.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Metal.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Metal.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Plywood.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Plywood.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_StoneWall.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_StoneWall.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Stucco.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Stucco.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_VinylSliding.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_VinylSliding.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_WoodShingles.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_WoodShingles.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_WoodSliding.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_WoodSliding.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_2Way.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_2Way.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_3Way.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_3Way.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_Corner.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_Corner.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_Culdesac.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_Culdesac.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_Inside.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_Inside.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\icons8-loading.gif",
+      "PackagePath": "staticwebassets\\assets\\icons8-loading.gif"
     },
     {
       "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\app.css",

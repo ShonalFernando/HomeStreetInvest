@@ -1,0 +1,60 @@
+﻿@page "/Housing/Ads"
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="/Housing/Library">Library</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/Housing/Estimations">Estimate</a>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link active" href="/Housing/Ads">Sell</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">More</a>
+                </li>
+            </ul>
+        </div>
+</nav>
+
+<div class="container-fluid" style="background-color:#4C86A8; padding-top:20px; padding-bottom:20px;">
+    <div class="row">
+        <div class="col-sm-10">
+            <button type="button" class="btn btn-outline-info" @onclick="@(() => SetView(ListingView.Create))">Create</button>
+            <button type="button" class="btn btn-outline-info" @onclick="@(() => SetView(ListingView.MyAds))">My Ads</button>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+@switch(_currentListingView)
+{
+    case ListingView.Create:
+        <AdvertCreate></AdvertCreate>
+        break;
+    case ListingView.MyAds:
+        <AdvertMy></AdvertMy>
+        break;
+}
+
+
+@code 
+{
+    public enum ListingView
+    {
+        Create,
+        MyAds
+    }
+
+    private ListingView _currentListingView;
+
+    private void SetView(ListingView ListingView)
+    {
+        _currentListingView = ListingView;
+    }
+
+}

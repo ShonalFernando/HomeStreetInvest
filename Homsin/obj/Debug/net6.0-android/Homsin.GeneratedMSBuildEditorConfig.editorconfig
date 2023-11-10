@@ -51,10 +51,59 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmV0Y2hEYXRhLnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HousePricing/AdsView.razor]
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseAdverts/AdvertCreate.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VQcmljaW5nXEFkc1ZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VBZHZlcnRzXEFkdmVydENyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseAdverts/AdvertLibrary.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VBZHZlcnRzXEFkdmVydExpYnJhcnkucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseAdverts/AdvertMy.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VBZHZlcnRzXEFkdmVydE15LnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseLibrary/HousingLibrary.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VMaWJyYXJ5XEhvdXNpbmdMaWJyYXJ5LnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseLibrary/LibraryAllAds.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VMaWJyYXJ5XExpYnJhcnlBbGxBZHMucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseLibrary/LibraryEstimates.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VMaWJyYXJ5XExpYnJhcnlFc3RpbWF0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseLibrary/LibraryFeed.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VMaWJyYXJ5XExpYnJhcnlGZWVkLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseMore/MoreTools.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VNb3JlXE1vcmVUb29scy5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -104,13 +153,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VQcmljaW5nXEhvdXNlRXN0aW1hdGlvbi5yYXpvcg==
-build_metadata.AdditionalFiles.RelativePath = 
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HousePricing/HousingLibrary.razor]
-build_metadata.AdditionalFiles.GenKind = 
-build_metadata.AdditionalFiles.ManifestResourceName = 
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VQcmljaW5nXEhvdXNpbmdMaWJyYXJ5LnJhem9y
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 

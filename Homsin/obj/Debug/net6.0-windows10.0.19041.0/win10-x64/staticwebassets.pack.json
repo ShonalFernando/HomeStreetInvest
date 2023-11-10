@@ -153,6 +153,10 @@
       "PackagePath": "staticwebassets\\assets\\cards\\Loc_Inside.png"
     },
     {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\icons8-loading.gif",
+      "PackagePath": "staticwebassets\\assets\\icons8-loading.gif"
+    },
+    {
       "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\app.css",
       "PackagePath": "staticwebassets\\css\\app.css"
     },

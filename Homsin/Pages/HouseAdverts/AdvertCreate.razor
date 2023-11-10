@@ -1,0 +1,102 @@
+﻿@if (!string.IsNullOrEmpty(_errorMessage))
+{
+    <div class="container-fluid" style="background-color:#BB6B00; padding-top:20px; padding-bottom:20px;">
+        <div class="row">
+            <div class="col-sm-10">
+                @_errorMessage
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-group">
+            <label for="heading">Heading</label>
+            <input type="text" class="form-control" id="heading" >
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea class="form-control" id="content" rows="6"></textarea>
+        </div>
+    </div>
+
+    <br/>
+
+    <div class="row">
+        <div class="form-group">
+            <label for="heading">Heading</label>
+            <input type="text" class="form-control" id="Description">
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="content">Content</label>
+            <input type="text" class="form-control" id="content">
+        </div>
+    </div>
+
+    <br />    
+    
+    <div class="row">
+        <div class="form-group">
+            <label for="location">Location/Address</label>
+            <input type="text" class="form-control" id="location">
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">                
+            <label for="sellprice">Selling Price</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="sellprice">
+                <div class="input-group-append">
+                    <span class="input-group-text">@_currency</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+</div>
+
+<br />
+<br />
+
+<div class="container-fluid" style="background-color:#4C86A8; padding-top:20px; padding-bottom:20px;">
+    <div class="row">
+        <div class="col-sm-10">
+            Create and advertisment for your House, Appartment,... &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Create Ad</button>
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>
+
+
+
+@code 
+{
+    private string _currency { get; set; } = "$"; //Default
+    private string _errorMessage { get; set; }
+
+    private void SubmitAd()
+    {
+        
+    }
+}

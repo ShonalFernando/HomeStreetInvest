@@ -1,0 +1,31 @@
+﻿@page "/Housing/More"
+
+<div class="container-fluid" style="background-color:#4C86A8; padding-top:20px; padding-bottom:20px;">
+    <div class="row">
+        <div class="col-sm-10">
+            <button type="button" class="btn btn-outline-info" @onclick="@(() => SetView(MoreView.CreatePost))">Create Post</button>
+            <button type="button" class="btn btn-outline-info" @onclick="@(() => SetView(MoreView.MyPosts))">My Posts</button>
+            <button type="button" class="btn btn-outline-info" @onclick="@(() => SetView(MoreView.MyEstimates))">My Estimates</button>
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+@code 
+{
+    public enum MoreView
+    {
+        CreatePost,
+        MyPosts,
+        MyEstimates
+    }
+
+    private MoreView _currentView;
+
+    private void SetView(MoreView _moreView)
+    {
+        _currentView = _moreView;
+    }
+}
