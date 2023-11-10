@@ -1,0 +1,20 @@
+﻿@page "/Housing/EditTest"
+
+@inject NavigationManager NavigationManager
+
+<h3>@CropNameLocal</h3>
+<h3>asdasdasdadad</h3>
+
+@code 
+{
+    private string CropNameLocal { get; set; } = "Wait...";
+
+    protected /*async*/ override void OnInitialized()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+
+         CropNameLocal = query["result"];
+    }
+
+}

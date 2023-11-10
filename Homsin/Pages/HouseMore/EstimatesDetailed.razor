@@ -1,0 +1,152 @@
+﻿@page "/Housing/Estimates/Detailed"
+
+@inject NavigationManager NavigationManager
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/Housing/Library">Library</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Housing/Estimations">Estimate</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="/Housing/Ads">Sell</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active" href="/Housing/More">More</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<br/>
+<br/>
+
+@if (!string.IsNullOrEmpty(_errorMessage))
+{
+    <div class="container-fluid" style="background-color:#BB6B00; padding-top:20px; padding-bottom:20px;">
+        <div class="row">
+            <div class="col-sm-10">
+                @_errorMessage
+            </div>
+            <div class="col-sm-2">
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="form-group">
+            <label for="heading">Heading</label>
+            <input type="text" class="form-control" id="heading">
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea class="form-control" id="content" rows="6"></textarea>
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="heading">Heading</label>
+            <input type="text" class="form-control" id="Description">
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="content">Content</label>
+            <input type="text" class="form-control" id="content">
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="location">Location/Address</label>
+            <input type="text" class="form-control" id="location">
+        </div>
+    </div>
+
+    <br />
+
+    <div class="row">
+        <div class="form-group">
+            <label for="sellprice">Selling Price</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="sellprice">
+                <div class="input-group-append">
+                    <span class="input-group-text">@_currency</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<div class="container-fluid" style="background-color:#4C86A8; 
+    padding-top:20px; 
+    padding-bottom:20px;  
+    position: fixed;
+    bottom: 0;
+    width: 100%;">
+    <div class="row">
+        @if(_myPost)
+        {
+            <div class="col-sm-10">
+                <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Edit Estimate</button>
+                 &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Delete Estimate</button>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        }
+        else
+        {
+            <div class="col-sm-10">
+                Message user username... &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Send Message</button>
+            </div>
+            <div class="col-sm-2">
+            </div>
+        }
+
+    </div>
+</div>
+
+
+
+@code
+{
+    private string _currency { get; set; } = "$"; //Default
+    private string _errorMessage { get; set; }
+    private bool _myPost { get; set; } = true;
+
+    private void SubmitAd()
+    {
+
+    }
+}

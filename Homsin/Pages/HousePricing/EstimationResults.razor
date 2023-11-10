@@ -1,14 +1,43 @@
-﻿<div class="jumbotron" style="background-color:#4C86A8; padding-left:10px;" >
-    <br />
-    <h1 class="display-4" style="color:#EDE3E9;">Homsin Estimations</h1>
-    <p class="lead">Please Wait...</p>
-    <hr class="my-4">
-    <p style="color:#EDE3E9;">Your home price estimate is loading – your financial insight is just moments away!</p>
-    <p>Generating Report</p>
-    <br />
-</div>
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+
+@inject HouseIntelService HouseIntelService
 
 
-@code {
+    <div class="jumbotron" style="background-color:#4C86A8; padding-left:10px;" >
+        <br />
+        <h1 class="display-4" style="color:#EDE3E9;">Homsin Estimations</h1>
+        <p class="lead">@(_isLoaded ? "Please Wait..." : "")</p>
+        <hr class="my-4">
+        <p style="color:#EDE3E9;">Your home price estimate is loading – your financial insight is just moments away!</p>
+        <p>@(_isLoaded ? "Generating Report" : "Report Generate... Save or Create and Advertisment")</p>
+        <br />
+    </div>
 
+
+@code 
+{
+    private HousePrice _housePriceModel { get; set; }
+    private float _priceEstimate { get; set; }
+    private bool _isLoaded { get; set; } = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _housePriceModel = HouseIntelService.housePrice;
+        _isLoaded = true;
+
+        try
+        {
+            _priceEstimate = await HouseIntelService.GetPrediction();        
+            if (_priceEstimate > -1)
+            {
+                _isLoaded = true;
+                StateHasChanged();
+            }
+        }
+        catch
+        {
+            _isLoaded = false;
+        }
+    }
 }

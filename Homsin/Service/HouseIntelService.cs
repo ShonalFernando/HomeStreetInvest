@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace Homsin.Service
@@ -16,9 +17,30 @@ namespace Homsin.Service
 
         //Also Get Preferences from dictionary to map Currency , etc Later
 
-        public void GetPrediction()
+        public async Task<float> GetPrediction()
         {
-            throw new NotImplementedException();
+            string jsonData = JsonSerializer.Serialize(housePrice);
+
+            string apiUrl = "http://localhost:5001/predict";
+
+            using (HttpClient httpClient = new HttpClient())
+            {
+                try
+                {
+                    StringContent content = new StringContent(jsonData, System.Text.Encoding.UTF8, "application/json");
+
+                    HttpResponseMessage response = await httpClient.PostAsync(apiUrl, content);
+
+                    string responseContent = await response.Content.ReadAsStringAsync();
+
+                    float _estimatedPrice = JsonSerializer.Deserialize<float>(responseContent);
+                    return _estimatedPrice;
+                }
+                catch (HttpRequestException ex)
+                {
+                    return -1;
+                }
+            }
         }
 
         public void DestroySessionData()
