@@ -1000,6 +1000,9 @@
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\HeaderImage.png">
       <PackagePath>wwwroot\assets\HeaderImage.png</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\HomeStreetInvest.png">
+      <PackagePath>wwwroot\assets\HomeStreetInvest.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\assets\Homsin.png">
       <PackagePath>wwwroot\assets\Homsin.png</PackagePath>
     </AppxPackagedFile>

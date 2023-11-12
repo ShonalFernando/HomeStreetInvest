@@ -1,0 +1,237 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\obj\\Release\\net6.0-windows10.0.19041.0\\win10-x64\\scopedcss\\bundle\\Homsin.styles.css",
+      "PackagePath": "staticwebassets\\Homsin.styles.css"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\HeaderImage.png",
+      "PackagePath": "staticwebassets\\assets\\HeaderImage.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\HomeStreetInvest.png",
+      "PackagePath": "staticwebassets\\assets\\HomeStreetInvest.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\Homsin.png",
+      "PackagePath": "staticwebassets\\assets\\Homsin.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\HomsinLoader.gif",
+      "PackagePath": "staticwebassets\\assets\\HomsinLoader.gif"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\Preloader.png",
+      "PackagePath": "staticwebassets\\assets\\Preloader.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\StockHead.png",
+      "PackagePath": "staticwebassets\\assets\\StockHead.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\car2.png",
+      "PackagePath": "staticwebassets\\assets\\car2.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\car3.png",
+      "PackagePath": "staticwebassets\\assets\\car3.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_1F.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_1F.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_2F.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_2F.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_Duplex.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_Duplex.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_TownHouse.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_TownHouse.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Cat_TownHouseEnd.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Cat_TownHouseEnd.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_Com.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_Com.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_Farm.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_Farm.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_HighDense.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_HighDense.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_LowDense.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_LowDense.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Est_MediumDense.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Est_MediumDense.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Asb.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Asb.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Ashp.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Ashp.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Brick.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Brick.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_BrickWall.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_BrickWall.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_CBoard.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_CBoard.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Cinder.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Cinder.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_HardBoard.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_HardBoard.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_ImitStucco.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_ImitStucco.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Metal.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Metal.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Plywood.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Plywood.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_StoneWall.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_StoneWall.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_Stucco.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_Stucco.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_VinylSliding.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_VinylSliding.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_WoodShingles.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_WoodShingles.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Ext_WoodSliding.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Ext_WoodSliding.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_2Way.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_2Way.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_3Way.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_3Way.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_Corner.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_Corner.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_Culdesac.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_Culdesac.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\cards\\Loc_Inside.png",
+      "PackagePath": "staticwebassets\\assets\\cards\\Loc_Inside.png"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\icons8-loading.gif",
+      "PackagePath": "staticwebassets\\assets\\icons8-loading.gif"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\FONT-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\ICON-LICENSE",
+      "PackagePath": "staticwebassets\\css\\open-iconic"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\README.md",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\README.md"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\css\\open-iconic-bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.eot",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.eot"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.otf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.otf"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.svg",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.svg"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.ttf",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.ttf"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\css\\open-iconic\\font\\fonts\\open-iconic.woff",
+      "PackagePath": "staticwebassets\\css\\open-iconic\\font\\fonts\\open-iconic.woff"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "obj\\Release\\net6.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.Homsin.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.build.Homsin.props",
+      "PackagePath": "build\\Homsin.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.buildMultiTargeting.Homsin.props",
+      "PackagePath": "buildMultiTargeting\\Homsin.props"
+    },
+    {
+      "Id": "obj\\Release\\net6.0-windows10.0.19041.0\\win10-x64\\staticwebassets\\msbuild.buildTransitive.Homsin.props",
+      "PackagePath": "buildTransitive\\Homsin.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d8edf817-6296-4ceb-8b79-a7a5cd34cffc")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeStreetInvest.UserAccounts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

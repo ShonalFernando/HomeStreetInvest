@@ -1,13 +1,17 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager NavigationManager
 
 <div class="page">
-	<div class="sidebar">
-		<NavMenu />
-	</div>
+	@if (!NavigationManager.Uri.Contains("/Auth"))
+	{
+		<div class="sidebar">
+			<NavMenu />
+		</div>
+	}
 
 	<main>
 		<div class="top-row px-4" >
-			<a href="https://docs.microsoft.com/aspnet/" target="_blank" style="padding-right:10px;">About</a>
+			<a href="/Accounts" style="padding-right:10px;"><img width="24" height="24" src="https://img.icons8.com/fluency/24/user-male-circle--v1.png" alt="user-male-circle--v1" /></a>
 		</div>
 
 		<article class="content px-4">

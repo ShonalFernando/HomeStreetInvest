@@ -1,0 +1,101 @@
+﻿@using Homsin.Service;
+
+@inject AuthenticationService AuthenticationService
+@inject NavigationManager NavigationManager
+
+
+<div class="container" style="margin-top:10%;">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="media">
+                <img class="mr-3" src="assets/HomeStreetInvest.png" style="width:180px; height:60px;" alt="homsinlogo">
+            </div>
+        </div>
+        <div class="col-sm-4">
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+<div class="container" style="margin-top:10px;">
+    <div class="row">
+        <div class="col-sm-4"><h4 class="display-3">Login to Homsin</h4></div>
+        <div class="col-sm-4">
+            <br />
+                <div class="form-group">
+                <input @bind="_Username" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+            <br />
+
+                <div class="form-group">
+                <input @bind="_Password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-info" @onclick="Login">Let Me In</button>
+                <button type="button" class="btn btn-light">Create a new Account</button>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+       
+    </div>
+</div>
+
+<style>
+
+    .metrobtn {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0px;
+        color: #ffffff;
+        font-size: 20px;
+        background: #4C86A8;
+        padding: 7px 5px 3px 7px;
+        text-decoration: none;
+    }
+
+        .metrobtn:hover {
+            background: #3cb0fd;
+            text-decoration: none;
+        }
+</style>
+
+@code 
+{
+    private string _Username { get; set; }
+    private string _Password { get; set; }
+
+    private bool _isFailed { get; set; } = false;
+    private string _ErrorMessage { get; set; } = "";
+
+
+    private async void Login()
+    {
+        AuthenticationService.isLogged = await AuthenticationService.Auth(_Username, _Password);
+        if (AuthenticationService.isLogged)
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            _isFailed = true;
+            _ErrorMessage = ""; //Get from the service property
+        }
+        StateHasChanged();
+    }
+
+    protected override void OnInitialized()
+    {
+        if (AuthenticationService.isLogged)
+        {
+            NavigationManager.NavigateTo("/Accounts");
+        }
+    }
+}

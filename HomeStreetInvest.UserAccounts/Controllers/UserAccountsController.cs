@@ -26,7 +26,6 @@ namespace HomeStreetInvest.UserAccounts.Controllers
         }
 
         //SessionCreator : Fires By FrontEnd after Verification
-
         [HttpGet("CreateSession/{Username}")]
         public async Task<IActionResult> CreateSession(string Username)
         {
@@ -54,8 +53,35 @@ namespace HomeStreetInvest.UserAccounts.Controllers
             }
         }
 
-        //Throught this API every password is encrypted
-        [HttpGet("AuthenticateUser/{Username}")]
+		//SessionDestroyer : Fires By FrontEnd after Verification
+		[HttpGet("DestroySession/{Username}")]
+		public async Task<IActionResult> DestroySession(string Username)
+		{
+			List<UserAccount> userAccounts = await _AccountsDataService.GetAsync();
+			UserAccount? UserAccount = userAccounts.Find(u => u.userName.Equals(Username));
+
+			if (UserAccount == null)
+			{
+				return BadRequest("No User found with the Username");
+			}
+			else
+			{
+				try
+				{
+					UserAccount.sessionID = "";
+					await _AccountsDataService.UpdateAsync(UserAccount._id, UserAccount);
+					return Ok("Session Destroyed");
+				}
+				catch (Exception CSe)
+				{
+
+					return Problem(CSe.Message);
+				}
+			}
+		}
+
+		//Throught this API every password is encrypted
+		[HttpGet("AuthenticateUser/{Username}")]
         public async Task<IActionResult> AuthenticateUser(string Username)
         {
             List<UserAccount> userAccounts = await _AccountsDataService.GetAsync();

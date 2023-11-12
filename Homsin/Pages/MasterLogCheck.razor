@@ -1,0 +1,15 @@
+﻿@using Homsin.Service;
+
+@inject NavigationManager NavigationManager
+@inject AuthenticationService AuthenticationService
+
+@code 
+{
+    protected override void OnInitialized()
+    {
+        if (!AuthenticationService.isLogged)
+        {
+            NavigationManager.NavigateTo("/Auth");
+        }
+    }
+}

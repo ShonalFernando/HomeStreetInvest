@@ -1,0 +1,10 @@
+bitmap;obj\Debug\net6.0-android\resizetizer\sp\drawable\maui_splash_image.xml
+bitmap;obj\Debug\net6.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
+color;obj\Debug\net6.0-android\res\values\colors.xml
+color;obj\Debug\net6.0-android\resizetizer\sp\values\maui_colors.xml
+item;obj\Debug\net6.0-android\resizetizer\sp\drawable\maui_splash_image.xml
+item;obj\Debug\net6.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
+layer-list;obj\Debug\net6.0-android\resizetizer\sp\drawable\maui_splash_image.xml
+layer-list;obj\Debug\net6.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
+resources;obj\Debug\net6.0-android\res\values\colors.xml
+resources;obj\Debug\net6.0-android\resizetizer\sp\values\maui_colors.xml

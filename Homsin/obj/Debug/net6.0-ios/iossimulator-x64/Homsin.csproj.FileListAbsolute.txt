@@ -240,7 +240,6 @@ D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-ios\iossimulator-x64\li
 D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-ios\iossimulator-x64\libxamarin-dotnet-debug.dylib
 D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-ios\iossimulator-x64\libxamarin-dotnet.a
 D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
-D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-ios\iossimulator-x64\build-signature\signature
 D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-ios\iossimulator-x64\staticwebassets\msbuild.Homsin.Microsoft.AspNetCore.StaticWebAssets.props
 D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-ios\iossimulator-x64\staticwebassets\msbuild.build.Homsin.props
 D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-ios\iossimulator-x64\staticwebassets\msbuild.buildMultiTargeting.Homsin.props

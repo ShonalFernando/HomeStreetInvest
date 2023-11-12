@@ -1,4 +1,10 @@
 ﻿@page "/"
+@using Homsin.Service;
+
+@inject NavigationManager NavigationManager
+@inject AuthenticationService AuthenticationService
+
+<MasterLogCheck></MasterLogCheck>
 
 <div class="container-fluid" style="background-image: url('assets/HeaderImage.png');">
     <div class="row">

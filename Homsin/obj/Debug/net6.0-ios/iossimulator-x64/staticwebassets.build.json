@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zSrhElDoagtWhAutBbZmnVhArwnsdCS5z46HUjTcgWI=",
+  "Hash": "jXJztyV05k6UXBPpQ6slEwKEul5IRD9zGOKVhBGTjLw=",
   "Source": "Homsin",
   "BasePath": "/",
   "Mode": "Root",
@@ -610,6 +610,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\HeaderImage.png"
+    },
+    {
+      "Identity": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\HomeStreetInvest.png",
+      "SourceId": "Homsin",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "assets/HomeStreetInvest.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\HomeStreetInvest.png"
     },
     {
       "Identity": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\Homsin.png",

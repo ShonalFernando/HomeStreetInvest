@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\assets\\HeaderImage.png"
     },
     {
+      "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\HomeStreetInvest.png",
+      "PackagePath": "staticwebassets\\assets\\HomeStreetInvest.png"
+    },
+    {
       "Id": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\wwwroot\\assets\\Homsin.png",
       "PackagePath": "staticwebassets\\assets\\Homsin.png"
     },

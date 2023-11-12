@@ -18,8 +18,9 @@ namespace Homsin
 
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddScoped<HouseIntelService>();
+            builder.Services.AddScoped<AuthenticationService>();
 #if DEBUG
-		builder.Services.AddBlazorWebViewDeveloperTools();
+            builder.Services.AddBlazorWebViewDeveloperTools();
 #endif
 
             builder.Services.AddSingleton<WeatherForecastService>();

@@ -1,0 +1,88 @@
+﻿@page "/Stock/Predict"
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/Stock/Feed">Feed</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/Stock/Predict">Predictions</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Stock/History">History</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid" style="background-color:#4C86A8;">
+    <br />
+    <h3 style="color:#EDE3E9;">Homsin Stock Preditions</h3>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="Stock" style="color:#EDE3E9; font-size:large;">Stock</label>
+            <input type="text" class="form-control" id="Stock" placeholder="Enter Stock">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="preddate" style="color:#EDE3E9;font-size:large;">Date to Predict</label>
+            <input type="date" class="form-control" id="preddate">
+        </div>
+    </div>
+
+    <br />
+</div>
+
+<br />
+
+<div class="container-fluid">
+    <div class="row">
+            <div class="form-group">
+                <button class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/scatter-plot.png" alt="candle-sticks" />&nbsp; Get Predictions</button>
+            </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Symbol</th>
+                <th scope="col">Close</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>fat</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>twitter</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+@code {
+
+}
