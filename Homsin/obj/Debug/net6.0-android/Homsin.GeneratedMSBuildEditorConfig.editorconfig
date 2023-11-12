@@ -58,6 +58,13 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFZpZXdcTG9naW5Db21wLnJh
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/AuthView/NewAccount.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aFZpZXdcTmV3QWNjb3VudC5yYXpvcg==
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Source/Repos/HomeStreetInvest/Homsin/Pages/ChatPortal/ChatHead.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
@@ -139,6 +146,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VMaWJyYXJ5XExpYnJhcnlGZWVkLnJhem9y
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Source/Repos/HomeStreetInvest/Homsin/Pages/HouseMore/EstimatesCreate.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSG91c2VNb3JlXEVzdGltYXRlc0NyZWF0ZS5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 

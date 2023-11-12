@@ -2,7 +2,7 @@
 @inject NavigationManager NavigationManager
 
 <div class="page">
-	@if (!NavigationManager.Uri.Contains("/Auth"))
+	@if (!NavigationManager.Uri.Contains("/Auth") && !NavigationManager.Uri.Contains("/Accounts"))
 	{
 		<div class="sidebar">
 			<NavMenu />
@@ -10,9 +10,12 @@
 	}
 
 	<main>
-		<div class="top-row px-4" >
-			<a href="/Accounts" style="padding-right:10px;"><img width="24" height="24" src="https://img.icons8.com/fluency/24/user-male-circle--v1.png" alt="user-male-circle--v1" /></a>
-		</div>
+		@if (!NavigationManager.Uri.Contains("/Auth") && !NavigationManager.Uri.Contains("/Accounts"))
+		{
+			<div class="top-row px-4">
+				<a href="/Accounts" style="padding-right:10px;"><img width="24" height="24" src="https://img.icons8.com/fluency/24/user-male-circle--v1.png" alt="user-male-circle--v1" /></a>
+			</div>
+		}
 
 		<article class="content px-4">
 			@Body

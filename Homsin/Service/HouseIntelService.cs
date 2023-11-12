@@ -14,23 +14,26 @@ namespace Homsin.Service
     {
         public HousePrice housePrice { get; set; } = new HousePrice ();
         public int currentWizardPage { get; set; }
+        public string errormess { get; set; } = "";
 
         //Also Get Preferences from dictionary to map Currency , etc Later
 
         public async Task<float> GetPrediction()
         {
+            housePrice.id = 0;
             string jsonData = JsonSerializer.Serialize(housePrice);
-
-            string apiUrl = "http://localhost:5001/predict";
+           
+            string apiUrl = "https://localhost:7114/api/HousingPricing/Predict";
 
             using (HttpClient httpClient = new HttpClient())
             {
+                httpClient.Timeout = TimeSpan.FromSeconds(60);
                 try
                 {
                     StringContent content = new StringContent(jsonData, System.Text.Encoding.UTF8, "application/json");
-
                     HttpResponseMessage response = await httpClient.PostAsync(apiUrl, content);
 
+                    errormess += await response.Content.ReadAsStringAsync();
                     string responseContent = await response.Content.ReadAsStringAsync();
 
                     float _estimatedPrice = JsonSerializer.Deserialize<float>(responseContent);
@@ -38,6 +41,7 @@ namespace Homsin.Service
                 }
                 catch (HttpRequestException ex)
                 {
+                    errormess += ex.InnerException.Message;
                     return -1;
                 }
             }

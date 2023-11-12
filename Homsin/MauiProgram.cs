@@ -19,6 +19,7 @@ namespace Homsin
             builder.Services.AddMauiBlazorWebView();
             builder.Services.AddScoped<HouseIntelService>();
             builder.Services.AddScoped<AuthenticationService>();
+            builder.Services.AddScoped<FinanceService>();
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
 #endif

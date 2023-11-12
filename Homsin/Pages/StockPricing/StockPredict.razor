@@ -1,5 +1,9 @@
 ﻿@page "/Stock/Predict"
 
+@using Homsin.Service;
+
+@inject FinanceService FinanceService
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -42,7 +46,7 @@
 <div class="container-fluid">
     <div class="row">
             <div class="form-group">
-                <button class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/24/scatter-plot.png" alt="candle-sticks" />&nbsp; Get Predictions</button>
+                <button class="btn btn-outline-info" @onclick="GetPredictions"><img width="24" height="24" src="https://img.icons8.com/fluency/24/scatter-plot.png" alt="candle-sticks" />&nbsp; Get Predictions</button>
             </div>
     </div>
 </div>
@@ -55,34 +59,45 @@
         <thead>
             <tr>
                 <th scope="col">Date</th>
-                <th scope="col">Stock</th>
-                <th scope="col">Symbol</th>
                 <th scope="col">Close</th>
             </tr>
         </thead>
         <tbody>
+            @foreach (var cls in stockPrices)
+            {
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>mdo</td>
+                    <td>@cls.Key</td>
+                    <td>@cls.Value</td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>twitter</td>
-            </tr>
+            }
         </tbody>
     </table>
 
 </div>
-@code {
 
+@code 
+{
+    private float[] stockprices { get; set; }
+    private Dictionary<DateTime, float> stockPrices = new Dictionary<DateTime, float>();
+
+
+    private async void GetPredictions()
+    {
+        var stockpred = await FinanceService.GetStockPredict("0");
+
+        if (stockpred != null)
+        {
+            // The datasets last days is 11/Nov/2023
+            DateTime startDate = new DateTime(2023, 11, 11);
+
+            // Populate the dictionary with DateTime and stock prices
+            for (int i = 0; i < stockpred.Length; i++)
+            {
+                DateTime currentDate = startDate.AddDays(i);
+                stockPrices[currentDate] = stockpred[i];
+            }
+        }
+
+        StateHasChanged();
+    }
 }

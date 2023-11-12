@@ -1,7 +1,20 @@
 ﻿@page "/Accounts"
+@using Homsin.Service;
 
-<h3>AccountsCenter</h3>
+@inject AuthenticationService AuthenticationService
+@inject NavigationManager NavigationManager
 
-@code {
+<NewAccount></NewAccount>
 
+
+@code 
+{
+    protected override void OnInitialized()
+    {
+        if (AuthenticationService.isLogged)
+        {
+            AuthenticationService.isLogged = false;
+            //Create a centralized logout method in service later
+        }
+    }
 }

@@ -2,24 +2,62 @@
 @using Homsin.Service;
 
 @inject HouseIntelService HouseIntelService
-
+@inject NavigationManager NavigationManager
 
     <div class="jumbotron" style="background-color:#4C86A8; padding-left:10px;" >
         <br />
         <h1 class="display-4" style="color:#EDE3E9;">Homsin Estimations</h1>
-        <p class="lead">@(_isLoaded ? "Please Wait..." : "")</p>
+    <p class="lead">@(_priceEstimate<0 ? "Please Wait..." : "")</p>
         <hr class="my-4">
         <p style="color:#EDE3E9;">Your home price estimate is loading – your financial insight is just moments away!</p>
-        <p>@(_isLoaded ? "Generating Report" : "Report Generate... Save or Create and Advertisment")</p>
+    <p>@(_priceEstimate<0 ? "Generating Report" : "Report Generated... Save or Create and Advertisment")</p>
         <br />
+        <br />
+        <br />
+    @if (_priceEstimate>0)
+    {
+        <br />
+        <br />
+        <h2>Wow... Your Estimate is <span style="color:#EDE3E9;">@_priceEstimate $</span></h2>
+        <br />
+        <br />
+    }
     </div>
 
+<div class="container-fluid" style="background-color:#4C86A8;
+    padding-top:20px;
+    padding-bottom:20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;">
+    <div class="row">
+
+        <div class="col-sm-10">
+            <button @onclick="SaveEstimate" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Save Estimate</button>
+            <button @onclick="Advertise" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Advertise</button>
+        </div>
+        <div class="col-sm-2">
+        </div>
+    </div>
+</div>
 
 @code 
 {
     private HousePrice _housePriceModel { get; set; }
-    private float _priceEstimate { get; set; }
+    private float _priceEstimate { get; set; } = -2;
     private bool _isLoaded { get; set; } = false;
+    private string _errormesss { get; set; }
+
+    private void Advertise()
+    {
+
+    }
+
+    private void SaveEstimate()
+    {
+        NavigationManager.NavigateTo($"/Housing/Estimates/Create?Estimate={_priceEstimate}");
+
+    }
 
     protected override async Task OnInitializedAsync()
     {
@@ -28,10 +66,12 @@
 
         try
         {
-            _priceEstimate = await HouseIntelService.GetPrediction();        
-            if (_priceEstimate > -1)
+            _priceEstimate = await HouseIntelService.GetPrediction();     
+            _errormesss = HouseIntelService.errormess;
+            if (_priceEstimate > -2)
             {
                 _isLoaded = true;
+                
                 StateHasChanged();
             }
         }

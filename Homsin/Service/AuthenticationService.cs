@@ -13,11 +13,14 @@ namespace Homsin.Service
 {
     public class AuthenticationService
     {
+		public bool isFailed { get; set; } = false;
+		public string FailMessage { get; set; }
+
         public bool isLogged { get; set; }
         public string Username { get; set; }
         public string[] SessionArgs { get; set; }
 
-        public async Task<bool> Auth(string password, string username) //Send Tuple with sessionid
+        public async Task<bool> Auth(string username, string password) //Send Tuple with sessionid
         {
             if (!string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(password))
             {
@@ -29,59 +32,86 @@ namespace Homsin.Service
 						if (password == _CheckAcc.password)
 						{
 							await CreateSession(username);
-							return true;
+                            isFailed = false;
+							FailMessage = "";
+							Username = username;
+                            return true;
 						}
 						else
 						{
-							return false;
+                            FailMessage = "Password is Incorrect";
+                            return false;
 						}
 					}
 					else
 					{
-						return false;
+                        FailMessage = "No User found with the the Username";
+                        return false;
 					}
 				}
 				else
 				{
-					return false;
+					FailMessage = "No User found with the the Username";
+                    return false;
 				}
 			}
             else
             {
+                FailMessage = "Please enter valid credentials";
                 return false;
             }
         }
 
 		public async Task<string> CreateSession(string UserName)
 		{
-			string apiUrl = $"https://localhost:5001/api/UserAccounts/CreateSession/" + UserName;
-
-			HttpClient client = new HttpClient();
-			UserAccount? userAccount = new();
-			HttpResponseMessage response = await client.GetAsync(apiUrl);
+			string apiUrl = $"https://localhost:{PortSettings.AuthAPI}/api/UserAccounts/CreateSession/" + UserName;
 			string ResponseMessage = "";
-			if (response.IsSuccessStatusCode)
+
+			try
 			{
-				string RawJson = await response.Content.ReadAsStringAsync();
-				//ResponseMessage = JsonSerializer.Deserialize<string>(RawJson);
+				HttpClient client = new HttpClient();
+				UserAccount? userAccount = new();
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+				if (response.IsSuccessStatusCode)
+				{
+					string RawJson = await response.Content.ReadAsStringAsync();
+					//ResponseMessage = JsonSerializer.Deserialize<string>(RawJson);
+				}
+
 			}
+			catch (Exception)
+			{
+                FailMessage = "Something Went Wrong in creating Session";
+				isLogged = false;
+                isFailed = true;
+            }
 
 			return ResponseMessage;
 		}
 
 		public async Task<UserAccount> GetUser(string UserName)
 		{
-			string apiUrl = $"https://localhost:5001/api/UserAccounts/AuthenticateUser/" + UserName;
+			string apiUrl = $"https://localhost:{PortSettings.AuthAPI}/api/UserAccounts/AuthenticateUser/" + UserName;
 
 			HttpClient client = new HttpClient();
 			UserAccount? userAccount = new();
-			HttpResponseMessage response = await client.GetAsync(apiUrl);
-
-			if (response.IsSuccessStatusCode)
+			try
 			{
-				string RawJson = await response.Content.ReadAsStringAsync();
-				userAccount = JsonSerializer.Deserialize<UserAccount>(RawJson);
+				HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+				if (response.IsSuccessStatusCode)
+				{
+					string RawJson = await response.Content.ReadAsStringAsync();
+					userAccount = JsonSerializer.Deserialize<UserAccount>(RawJson);
+				}
 			}
+			catch (Exception)
+			{
+                isFailed = true;
+				FailMessage = "Something Went Wrong";
+			}
+
 			return userAccount;
 		}
 
@@ -93,12 +123,21 @@ namespace Homsin.Service
 		//Not Implimneted from here
 		public async Task CreateUser(UserAccount UserAccount)
 		{
-			string RawJson = JsonSerializer.Serialize(UserAccount);
-			StringContent content = new StringContent(RawJson, System.Text.Encoding.UTF8, "application/json");
-			string apiUrl = $"https://localhost:7265/api/UserAccounts/CreateUser";
-			HttpClient client = new HttpClient();
-			var response = await client.PostAsJsonAsync(apiUrl, content);
+			try
+			{
+				string RawJson = JsonSerializer.Serialize(UserAccount);
+				StringContent content = new StringContent(RawJson, System.Text.Encoding.UTF8, "application/json");
+				string apiUrl = $"https://localhost:{PortSettings.AuthAPI}/api/UserAccounts/CreateUser";
+				HttpClient client = new HttpClient();
+				var response = await client.PostAsJsonAsync(apiUrl, content);
 
+			}
+			catch (Exception)
+			{
+
+				isFailed = true;
+				FailMessage = "Something Went Wrong";
+			}
 			//Handle responses later
 		}
 
@@ -107,7 +146,7 @@ namespace Homsin.Service
 		public async Task UpdateUser(UserAccount UserAccount)
 		{
 			string responseContent;
-			string apiUrl = $"https://localhost:5001/api/UserAccounts/";
+			string apiUrl = $"https://localhost:{PortSettings.AuthAPI}/api/UserAccounts/";
 			HttpClient client = new HttpClient();
 			var response = await client.PutAsJsonAsync(apiUrl, UserAccount);
 		}
