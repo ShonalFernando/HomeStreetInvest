@@ -73,7 +73,7 @@ namespace Homsin.Service
                 string apiUrl = $"https://localhost:{PortSettings.RWAPI}/api/Estimates/UpdateEstimate";
 
                 HttpClient client = new HttpClient();
-                var response = await client.PutAsJsonAsync(apiUrl, content);
+                var response = await client.PutAsync(apiUrl, content);
 
             }
             catch (Exception)

@@ -15,7 +15,7 @@
         @foreach (var myad in myads)
         {
             <div class="list-group">
-                <a href="/Housing/Ads/Detailed" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="/Housing/Ads/Detailed?adID=@myad._id.ToString()" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">@myad.heading</h5>
                         <small>@myad.datePosted</small>

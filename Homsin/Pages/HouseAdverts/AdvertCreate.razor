@@ -3,6 +3,7 @@
 @using MongoDB.Bson;
 @inject AdService AdService
 @inject AuthenticationService AuthenticationService
+@inject NavigationManager NavigationManager
 @if (!string.IsNullOrEmpty(_errorMessage))
 {
     <div class="container-fluid" style="background-color:#BB6B00; padding-top:20px; padding-bottom:20px;">
@@ -89,6 +90,7 @@
         Advertisment Advertisment = new();
         Advertisment.username = AuthenticationService.Username;
         Advertisment.content = content;
+        Advertisment.AdID = "_";
         Advertisment.heading = heading;
         Advertisment.description = description;
         Advertisment.datePosted = DateTime.Now;
@@ -105,8 +107,9 @@
         }
         else
         {
-                    await AdService.CreateAd(Advertisment);
-        _errorMessage = AdService._ErrorMessage;
+            await AdService.CreateAd(Advertisment);
+            _errorMessage = AdService._ErrorMessage;
+            NavigationManager.NavigateTo("/Housing/Ads");
         }
 
 

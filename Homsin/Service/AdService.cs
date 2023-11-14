@@ -80,17 +80,25 @@ namespace Homsin.Service
 
                 StringContent content = new StringContent(RawJson, System.Text.Encoding.UTF8, "application/json");
 
-                string apiUrl = $"https://localhost:{PortSettings.RWAPI}/api/Ads/UpdateAd";
+                string apiUrl = $"https://localhost:{PortSettings.RWAPI}/api/Ads/UpdateAd/{Advertisment.AdID}";
 
                 HttpClient client = new HttpClient();
-                var response = await client.PutAsJsonAsync(apiUrl, content);
+                var response = await client.PutAsync(apiUrl, content);
+                if (response.IsSuccessStatusCode)
+                {
+                    _ErrorMessage = "Something Went ok";
+                }
+                else
+                {
+                    _ErrorMessage = "Something Went Wrong 2 " + response.ReasonPhrase;
+                }
 
             }
-            catch (Exception)
+            catch (Exception ee)
             {
 
                 isFailed = true;
-                _ErrorMessage = "Something Went Wrong";
+                _ErrorMessage = "Something Went Wrong" + ee.Message;
             }
         }
 

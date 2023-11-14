@@ -1,4 +1,10 @@
 ﻿@page "/Housing/Ads/Detailed"
+@using HomeStreetInvest.Model;
+@using Homsin.Service;
+
+@inject AuthenticationService AuthenticationService
+@inject NavigationManager NavigationManager
+@inject AdService AdService
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -38,7 +44,7 @@
     <div class="row">
         <div class="form-group">
             <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="heading">
+            <input type="text" @bind="heading" class="form-control" id="heading">
         </div>
     </div>
 
@@ -47,7 +53,7 @@
     <div class="row">
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea class="form-control" id="content" rows="6"></textarea>
+            <textarea class="form-control" @bind="content" id="content" rows="6"></textarea>
         </div>
     </div>
 
@@ -55,54 +61,14 @@
 
     <div class="row">
         <div class="form-group">
-            <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="Description">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="content">Content</label>
-            <input type="text" class="form-control" id="content">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="location">Location/Address</label>
-            <input type="text" class="form-control" id="location">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="sellprice">Selling Price</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="sellprice">
-                <div class="input-group-append">
-                    <span class="input-group-text">@_currency</span>
-                </div>
-            </div>
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" @bind="description" id="Description">
         </div>
     </div>
 
     <br />
 
 </div>
-
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
 
 <div class="container-fluid" style="background-color:#4C86A8;
     padding-top:20px;
@@ -115,7 +81,8 @@
         {
             <div class="col-sm-10">
                 @*Dont Allow to edit Ads*@
-                &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Delete Ad</button>
+                &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Edit Ad</button>
+                &nbsp; <button @onclick="DeleteAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Delete Ad</button>
             </div>
             <div class="col-sm-2">
             </div>
@@ -135,12 +102,77 @@
 
 @code
 {
+    //Data for Ad
+    private string heading { get; set; } = null!;
+    private string content { get; set; } = null!;
+    private string description { get; set; } = null!;
+
     private string _currency { get; set; } = "$"; //Default
     private string _errorMessage { get; set; }
     private bool _myAd { get; set; } = true;
 
-    private void SubmitAd()
-    {
+    List<Advertisment> ads { get; set; } = new();
+    Advertisment CurrentAd { get; set; }
+    private string CurrentAdID { get; set; }
 
+    protected async override void OnInitialized()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        CurrentAdID = query["adID"];
+
+        ads = await AdService.GetAds();
+        _errorMessage = AdService._ErrorMessage;
+        CurrentAd = ads.Find(ad => ad._id.ToString().Equals(CurrentAdID));
+
+        //Up
+        heading = CurrentAd.heading;
+        content = CurrentAd.content;
+        description = CurrentAd.description;
+
+        if (CurrentAd.username == AuthenticationService.Username)
+        {
+            _myAd = true;
+        }
+
+        StateHasChanged();
+    }
+
+    private async void DeleteAd()
+    {
+        try
+        {
+            await AdService.DeleteAd(CurrentAd);
+            _errorMessage = AdService._ErrorMessage;
+        }
+        catch (Exception  ee)
+        {
+            _errorMessage = "Something went Wrong" + ee.Message;
+        }
+    }
+
+    private async void SubmitAd()
+    {
+        CurrentAd.content = content;
+        CurrentAd.heading = heading;
+        CurrentAd.description = description;
+
+
+        if (string.IsNullOrEmpty(CurrentAd.content) ||
+             string.IsNullOrEmpty(CurrentAd.heading) ||
+                string.IsNullOrEmpty(CurrentAd.username) ||
+                     string.IsNullOrEmpty(CurrentAd.description))
+        {
+            _errorMessage = "Ohhhhh something is missing";
+        }
+        else
+        {
+            await AdService.UpdateAd(CurrentAd);
+            _errorMessage = AdService._ErrorMessage;
+            //NavigationManager.NavigateTo("/Housing/Ads");
+        }
+
+
+        StateHasChanged();
     }
 }

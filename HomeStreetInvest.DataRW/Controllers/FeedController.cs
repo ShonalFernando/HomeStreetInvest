@@ -36,6 +36,7 @@ namespace HomeStreetInvest.DataRW.Controllers
             try
             {
                 _FeedPost._id = ObjectId.GenerateNewId();
+                _FeedPost.FeID = _FeedPost._id.ToString();
                 await _FeedDataService.CreateAsync(_FeedPost);
                 return Ok("Succesfully Created FeedPost");
             }

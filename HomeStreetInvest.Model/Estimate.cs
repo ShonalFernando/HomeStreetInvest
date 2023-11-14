@@ -10,7 +10,8 @@ namespace HomeStreetInvest.Model
     {
         [BsonId]
         public ObjectId _id { get; set; }
-        public string username { get; set; } = null!; //Username is unique!!!!!!
+        public string EsID { get; set; } = null!;
+        public string username { get; set; } = null!;
         public string heading { get; set; } = null!;
         public string content { get; set; } = null!;
         public string description { get; set; } = null!;

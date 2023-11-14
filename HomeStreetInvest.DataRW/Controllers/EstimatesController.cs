@@ -36,6 +36,7 @@ namespace HomeStreetInvest.DataRW.Controllers
             try
             {
                 _Estimate._id = ObjectId.GenerateNewId();
+                _Estimate.EsID = _Estimate._id.ToString();
                 await _EstimatesDataService.CreateAsync(_Estimate);
                 return Ok("Succesfully Created Estimate");
             }

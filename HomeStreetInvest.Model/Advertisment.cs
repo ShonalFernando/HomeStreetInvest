@@ -10,6 +10,7 @@ namespace HomeStreetInvest.Model
     {
         [BsonId]
         public ObjectId _id { get; set; }
+        public string AdID { get; set; } = null!;
         public string? username { get; set; }
         public string? heading { get; set; }
         public string? content { get; set; }
