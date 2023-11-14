@@ -20,6 +20,9 @@ namespace Homsin
             builder.Services.AddScoped<HouseIntelService>();
             builder.Services.AddScoped<AuthenticationService>();
             builder.Services.AddScoped<FinanceService>();
+            builder.Services.AddScoped<FeedService>();
+            builder.Services.AddScoped<EstimateService>();
+            builder.Services.AddScoped<AdService>();
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
 #endif

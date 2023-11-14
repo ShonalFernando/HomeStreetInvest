@@ -1,14 +1,20 @@
-﻿<div class="container-fluid">
-    @foreach (var ad in AdListing)
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+
+@inject EstimateService EstimateService
+@inject AuthenticationService AuthenticationService
+
+<div class="container-fluid">
+    @foreach (var myest in myests)
     {
         <div class="list-group">
             <a href="/Housing/Estimates/Detailed" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago @ad</small>
+                    <h5 class="mb-1">@myest.heading</h5>
+                    <small>@myest.sellprice</small>
                 </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
+                <p class="mb-1">@myest.content</p>
+                <small>@myest.description</small>
             </a>
         </div>
         <br />
@@ -16,5 +22,21 @@
 </div>
 @code
 {
-    List<string> AdListing = new List<string>() { "test", "test", "test" };
+    List<Estimate> myests { get; set; } = new();
+    private string _ErrorMessage { get; set; } = "";
+
+    protected override async void OnInitialized()
+    {
+        List<Estimate> AllEstimates = await EstimateService.GetEstimates();
+        _ErrorMessage = EstimateService._ErrorMessage;
+
+        foreach (var est in AllEstimates)
+        {
+            if (est.username == AuthenticationService.Username)
+            {
+                myests.Add(est);
+            }
+        }
+        StateHasChanged();
+    }
 }

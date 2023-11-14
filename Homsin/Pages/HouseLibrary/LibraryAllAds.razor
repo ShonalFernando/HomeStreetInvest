@@ -1,20 +1,42 @@
-﻿<div class="container-fluid">
-    @foreach(var ad in AdListing)
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+
+@inject AdService AdService
+
+<div class="container-fluid">
+    @if(!ads.Any())
     {
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago @ad</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-            </a>
-        </div>
-        <br />
+        <p>Loading...</p>
     }
+    else
+    {
+        @foreach (var ad in ads)
+        {
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">@ad.heading</h5>
+                        <small>3 days ago : @ad.datePosted</small>
+                    </div>
+                    <p class="mb-1">@ad.content</p>
+                    <small>@ad.description</small>
+                </a>
+            </div>
+            <br />
+        }
+    }
+
+
 </div>
 @code 
 {
-    List<string> AdListing = new List<string>() { "test", "test", "test" };
+    List<Advertisment> ads { get; set; } = new();
+    private string _ErrorMessage { get; set; } = "";
+
+    protected override async void OnInitialized()
+    {
+        ads = await AdService.GetAds();
+        _ErrorMessage = AdService._ErrorMessage;
+        StateHasChanged();
+    }
 }

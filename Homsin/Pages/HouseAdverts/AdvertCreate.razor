@@ -1,4 +1,9 @@
-﻿@if (!string.IsNullOrEmpty(_errorMessage))
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+@using MongoDB.Bson;
+@inject AdService AdService
+@inject AuthenticationService AuthenticationService
+@if (!string.IsNullOrEmpty(_errorMessage))
 {
     <div class="container-fluid" style="background-color:#BB6B00; padding-top:20px; padding-bottom:20px;">
         <div class="row">
@@ -17,7 +22,7 @@
     <div class="row">
         <div class="form-group">
             <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="heading" >
+            <input type="text" @bind="heading" class="form-control" id="heading" >
         </div>
     </div>
 
@@ -26,7 +31,7 @@
     <div class="row">
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea class="form-control" id="content" rows="6"></textarea>
+            <textarea class="form-control" @bind="content" id="content" rows="6"></textarea>
         </div>
     </div>
 
@@ -34,45 +39,13 @@
 
     <div class="row">
         <div class="form-group">
-            <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="Description">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="content">Content</label>
-            <input type="text" class="form-control" id="content">
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" @bind="description" id="Description">
         </div>
     </div>
 
     <br />    
     
-    <div class="row">
-        <div class="form-group">
-            <label for="location">Location/Address</label>
-            <input type="text" class="form-control" id="location">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">                
-            <label for="sellprice">Selling Price</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="sellprice">
-                <div class="input-group-append">
-                    <span class="input-group-text">@_currency</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br />
-
 </div>
 
 <br />
@@ -98,15 +71,45 @@
     </div>
 </div>
 
-
+<h1>@AuthenticationService.Username</h1>
 
 @code 
 {
     private string _currency { get; set; } = "$"; //Default
     private string _errorMessage { get; set; }
 
-    private void SubmitAd()
-    {
-        
+    //Data for Ad
+    private ObjectId ownerid { get; set; }
+    private string heading { get; set; } = null!;
+    private string content { get; set; } = null!;
+    private string description { get; set; } = null!;
+
+    private async void SubmitAd()
+    {  
+        Advertisment Advertisment = new();
+        Advertisment.username = AuthenticationService.Username;
+        Advertisment.content = content;
+        Advertisment.heading = heading;
+        Advertisment.description = description;
+        Advertisment.datePosted = DateTime.Now;
+
+
+        if (string.IsNullOrEmpty(Advertisment.content) ||
+    string.IsNullOrEmpty(Advertisment.heading) ||
+    string.IsNullOrEmpty(Advertisment.username) ||
+    string.IsNullOrEmpty(Advertisment.description))
+        {
+            _errorMessage = "Ohhhhh something is missing";
+
+
+        }
+        else
+        {
+                    await AdService.CreateAd(Advertisment);
+        _errorMessage = AdService._ErrorMessage;
+        }
+
+
+        StateHasChanged();
     }
 }

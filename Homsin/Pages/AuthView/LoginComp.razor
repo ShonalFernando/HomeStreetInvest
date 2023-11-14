@@ -1,4 +1,5 @@
-﻿@using Homsin.Service;
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
 
 @inject AuthenticationService AuthenticationService
 @inject NavigationManager NavigationManager
@@ -94,9 +95,14 @@
 
     private async void Login()
     {
-        AuthenticationService.isLogged = await AuthenticationService.Auth(_Username, _Password);
+        AuthenticationService.isLogged = (await AuthenticationService.Auth(_Username, _Password)).Item1;
+        UserAccount AccountCurrent = (await AuthenticationService.Auth(_Username, _Password)).Item2;
+
         if (AuthenticationService.isLogged)
         {
+            AuthenticationService.isFailed = false;
+            AuthenticationService.UserID = AccountCurrent._id;
+            AuthenticationService.Username = AccountCurrent.userName;
             NavigationManager.NavigateTo("/");
         }
         else

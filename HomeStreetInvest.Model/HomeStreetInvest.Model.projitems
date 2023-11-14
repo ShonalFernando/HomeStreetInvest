@@ -9,7 +9,9 @@
     <Import_RootNamespace>HomeStreetInvest.Model</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)Estimates.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Advertisment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Estimate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Feed.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HSDatabaseSettings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HousePrice.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LogModel.cs" />

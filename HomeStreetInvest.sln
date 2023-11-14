@@ -16,7 +16,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeStreetInvest.UserAccoun
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Homsin", "Homsin\Homsin.csproj", "{55015126-4C63-458F-A833-30D7DE52F6D6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeStreetInvest.DataRW", "HomeStreetInvest.DataRW\HomeStreetInvest.DataRW.csproj", "{86311B69-D236-4B4E-922B-574CFFA3C830}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeStreetInvest.DataRW", "HomeStreetInvest.DataRW\HomeStreetInvest.DataRW.csproj", "{86311B69-D236-4B4E-922B-574CFFA3C830}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,8 +55,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 		SolutionGuid = {7DC6094F-C88C-4472-A5DB-D82173002D5B}
+		        SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		HomeStreetInvest.Model\HomeStreetInvest.Model.projitems*{00782548-c1e4-4bc0-ab7e-8a9157845ebf}*SharedItemsImports = 13
@@ -70,5 +70,7 @@ Global
 		HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems*{5d30b6d8-6eb6-4582-bacf-efdeed14cadd}*SharedItemsImports = 13
 		HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems*{73db03d3-9306-410d-9b8b-7115080f78ee}*SharedItemsImports = 5
 		HomeStreetInvest.Model\HomeStreetInvest.Model.projitems*{73db03d3-9306-410d-9b8b-7115080f78ee}*SharedItemsImports = 5
+		HomeStreetInvest.CommonTools\HomeStreetInvest.CommonTools.projitems*{86311b69-d236-4b4e-922b-574cffa3c830}*SharedItemsImports = 5
+		HomeStreetInvest.Model\HomeStreetInvest.Model.projitems*{86311b69-d236-4b4e-922b-574cffa3c830}*SharedItemsImports = 5
 	EndGlobalSection
 EndGlobal

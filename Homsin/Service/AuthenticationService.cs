@@ -1,5 +1,6 @@
 ﻿using HomeStreetInvest.Model;
 using Microsoft.AspNetCore.Components;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,11 @@ namespace Homsin.Service
         public bool isLogged { get; set; }
         public string Username { get; set; }
         public string[] SessionArgs { get; set; }
+		public ObjectId UserID { get; set; }
+		public string UserIDstring { get; set; }
 
-        public async Task<bool> Auth(string username, string password) //Send Tuple with sessionid
+
+        public async Task<Tuple<bool,UserAccount>> Auth(string username, string password)
         {
             if (!string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(password))
             {
@@ -35,30 +39,32 @@ namespace Homsin.Service
                             isFailed = false;
 							FailMessage = "";
 							Username = username;
-                            return true;
+							UserID = _CheckAcc._id;
+							UserIDstring = _CheckAcc._id.ToString();
+                            return Tuple.Create<bool, UserAccount>(true,_CheckAcc);
 						}
 						else
 						{
                             FailMessage = "Password is Incorrect";
-                            return false;
-						}
+                            return Tuple.Create<bool, UserAccount>(false, new UserAccount());
+                        }
 					}
 					else
 					{
                         FailMessage = "No User found with the the Username";
-                        return false;
-					}
+                        return Tuple.Create<bool, UserAccount>(false, new UserAccount());
+                    }
 				}
 				else
 				{
 					FailMessage = "No User found with the the Username";
-                    return false;
-				}
+                    return Tuple.Create<bool, UserAccount>(false, new UserAccount());
+                }
 			}
             else
             {
                 FailMessage = "Please enter valid credentials";
-                return false;
+                return Tuple.Create<bool, UserAccount>(false, new UserAccount());
             }
         }
 
@@ -70,7 +76,7 @@ namespace Homsin.Service
 			try
 			{
 				HttpClient client = new HttpClient();
-				UserAccount? userAccount = new();
+				UserAccount userAccount = new();
 				HttpResponseMessage response = await client.GetAsync(apiUrl);
 
 				if (response.IsSuccessStatusCode)
@@ -103,7 +109,8 @@ namespace Homsin.Service
 				if (response.IsSuccessStatusCode)
 				{
 					string RawJson = await response.Content.ReadAsStringAsync();
-					userAccount = JsonSerializer.Deserialize<UserAccount>(RawJson);
+					FailMessage = RawJson;
+                    userAccount = JsonSerializer.Deserialize<UserAccount>(RawJson);
 				}
 			}
 			catch (Exception)

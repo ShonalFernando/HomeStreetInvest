@@ -1,3 +1,5 @@
+using HomeStreetInvest.DataRW.Service;
+
 namespace HomeStreetInvest.DataRW
 {
     public class Program
@@ -12,6 +14,9 @@ namespace HomeStreetInvest.DataRW
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddScoped<AdDataService>();
+            builder.Services.AddScoped<FeedDataService>();
+            builder.Services.AddScoped<EstimatesDataService>();
 
             var app = builder.Build();
 

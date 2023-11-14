@@ -1,20 +1,41 @@
-﻿<div class="container-fluid">
-    @foreach (var ad in AdListing)
-    {
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago @ad</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-            </a>
-        </div>
-        <br />
-    }
-</div>
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+
+@inject EstimateService EstimateService
+
+@if (!estimates.Any())
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="container-fluid">
+        @foreach (var estm in estimates)
+        {
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">@estm.heading</h5>
+                        <small>Starting at @estm.sellprice</small>
+                    </div>
+                    <p class="mb-1">@estm.content</p>
+                    <small>@estm.content</small>
+                </a>
+            </div>
+            <br />
+        }
+    </div>
+}
+
 @code
 {
-    List<string> AdListing = new List<string>() { "aaaa", "aaaaaaa", "aaaaaaaa" };
+    List<Estimate> estimates { get; set; } = new();
+    private string _ErrorMessage { get; set; } = "";
+
+    protected override async void OnInitialized()
+    {
+        estimates = await EstimateService.GetEstimates();
+        _ErrorMessage = EstimateService._ErrorMessage;
+        StateHasChanged();
+    }
 }

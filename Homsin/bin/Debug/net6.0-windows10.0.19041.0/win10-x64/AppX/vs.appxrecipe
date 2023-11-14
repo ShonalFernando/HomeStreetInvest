@@ -29,29 +29,29 @@
     <AppXManifest Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-11-12T15:18:05.003</Modified>
+      <Modified>2023-11-14T10:25:57.249</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-11-12T15:18:03.839</Modified>
+      <Modified>2023-11-14T10:25:55.788</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.runtimeconfig.json">
       <PackagePath>Homsin.runtimeconfig.json</PackagePath>
-      <Modified>2023-11-12T05:16:14.772</Modified>
+      <Modified>2023-11-13T03:24:35.239</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.dll">
       <PackagePath>Homsin.dll</PackagePath>
-      <Modified>2023-11-12T15:17:58.848</Modified>
+      <Modified>2023-11-14T10:25:51.672</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Homsin.exe</PackagePath>
-      <Modified>2023-11-12T15:18:00.726</Modified>
+      <Modified>2023-11-14T10:25:52.114</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.deps.json">
       <PackagePath>Homsin.deps.json</PackagePath>
-      <Modified>2023-11-12T13:41:25.009</Modified>
+      <Modified>2023-11-13T23:25:59.606</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.20\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -1195,7 +1195,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\scopedcss\bundle\Homsin.styles.css">
       <PackagePath>wwwroot\Homsin.styles.css</PackagePath>
-      <Modified>2023-11-12T05:12:19.859</Modified>
+      <Modified>2023-11-13T03:22:34.819</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\scopedcss\projectbundle\Homsin.bundle.scp.css">
       <PackagePath>wwwroot\Homsin.bundle.scp.css</PackagePath>
@@ -1411,7 +1411,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\wwwroot\index.html">
       <PackagePath>wwwroot\index.html</PackagePath>
-      <Modified>2023-11-11T03:31:45.483</Modified>
+      <Modified>2023-11-13T03:23:38.087</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>

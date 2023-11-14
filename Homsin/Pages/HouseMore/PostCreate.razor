@@ -1,4 +1,10 @@
-﻿@if (!string.IsNullOrEmpty(_errorMessage))
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+
+@inject FeedService FeedService
+@inject AuthenticationService AuthenticationService
+
+@if (!string.IsNullOrEmpty(_errorMessage))
 {
     <div class="container-fluid" style="background-color:#BB6B00; padding-top:20px; padding-bottom:20px;">
         <div class="row">
@@ -17,7 +23,7 @@
     <div class="row">
         <div class="form-group">
             <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="heading">
+            <input type="text" class="form-control" @bind="heading" id="heading">
         </div>
     </div>
 
@@ -26,7 +32,7 @@
     <div class="row">
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea class="form-control" id="content" rows="6"></textarea>
+            <textarea class="form-control" id="content" @bind="content" rows="6"></textarea>
         </div>
     </div>
 
@@ -35,44 +41,11 @@
     <div class="row">
         <div class="form-group">
             <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="Description">
+            <input type="text" class="form-control" @bind="description" id="Description">
         </div>
     </div>
 
     <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="content">Content</label>
-            <input type="text" class="form-control" id="content">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="location">Location/Address</label>
-            <input type="text" class="form-control" id="location">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="sellprice">Selling Price</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="sellprice">
-                <div class="input-group-append">
-                    <span class="input-group-text">@_currency</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br />
-
 </div>
 
 <br />
@@ -91,7 +64,7 @@
     width: 100%;">
     <div class="row">
         <div class="col-sm-10">
-            Create a post... &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Create Post</button>
+            Create a post... &nbsp; <button @onclick="SubmitPost" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Create Post</button>
         </div>
         <div class="col-sm-2">
         </div>
@@ -103,10 +76,39 @@
 @code
 {
     private string _currency { get; set; } = "$"; //Default
-    private string _errorMessage { get; set; }
+    private string _errorMessage { get; set; } = "";
 
-    private void SubmitAd()
+    public string heading { get; set; } = null!;
+    public string content { get; set; } = null!;
+    public string description { get; set; } = null!;
+
+    private async void SubmitPost()
     {
+        Feed feed = new();
+        feed.description = description;
+        feed.content = content;
+        feed.heading = heading;
+        feed.datePosted = DateTime.Today;
+        feed.username = AuthenticationService.Username;
+
+        if (string.IsNullOrEmpty(feed.description) ||
+            string.IsNullOrEmpty(feed.content) ||
+            string.IsNullOrEmpty(feed.username) ||
+            string.IsNullOrEmpty(feed.heading))
+        {
+            _errorMessage = "Please enter all Values";
+        }
+        else
+        {
+            try
+            {
+                await FeedService.CreateFeed(feed);
+            }
+            catch (Exception SPe)
+            {
+                _errorMessage = SPe.Message;
+            }
+        }
 
     }
 }

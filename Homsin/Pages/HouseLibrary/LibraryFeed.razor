@@ -1,20 +1,41 @@
-﻿<div class="container-fluid">
-    @foreach (var ad in AdListing)
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+
+@inject FeedService FeedService
+
+<div class="container-fluid">
+    @if(!Feeds.Any())
     {
-        <div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">List group item heading</h5>
-                    <small>3 days ago @ad</small>
-                </div>
-                <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-                <small>Donec id elit non mi porta.</small>
-            </a>
-        </div>
-        <br />
+        <p>Loading...</p>
     }
+    else
+    {
+        @foreach (var feed in Feeds)
+        {
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">@feed.heading</h5>
+                        <small>@feed.datePosted</small>
+                    </div>
+                    <p class="mb-1">@feed.content</p>
+                    <small>@feed.description</small>
+                </a>
+            </div>
+            <br />
+        }
+    }
+
 </div>
 @code
 {
-    List<string> AdListing = new List<string>() { "dddddd", "ddddddd", "dddddddd" };
+    List<Feed> Feeds { get; set; } = new();
+    private string _ErrorMessage { get; set; } = "";
+
+    protected override async void OnInitialized()
+    {
+        Feeds = await FeedService.GetFeeds();
+        _ErrorMessage = FeedService._ErrorMessage;
+        StateHasChanged();
+    }
 }
