@@ -1,8 +1,9 @@
 ﻿@using HomeStreetInvest.Model;
 @using Homsin.Service;
+@using MongoDB.Bson;
 
-@inject FeedService FeedService
 @inject AuthenticationService AuthenticationService
+@inject FeedDataService FeedDataService
 
 @if (!string.IsNullOrEmpty(_errorMessage))
 {
@@ -40,7 +41,7 @@
 
     <div class="row">
         <div class="form-group">
-            <label for="heading">Heading</label>
+            <label for="heading">Description</label>
             <input type="text" class="form-control" @bind="description" id="Description">
         </div>
     </div>
@@ -103,7 +104,9 @@
         {
             try
             {
-                await FeedService.CreateFeed(feed);
+                feed._id = ObjectId.GenerateNewId();
+                feed.FeID = feed._id.ToString();
+                await FeedDataService.CreateAsync(feed);
             }
             catch (Exception SPe)
             {

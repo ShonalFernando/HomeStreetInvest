@@ -2,6 +2,7 @@
 @using Homsin.Service;
 
 @inject EstimateService EstimateService
+@inject EstimatesDataService EstimatesDataService
 
 @if (!estimates.Any())
 {
@@ -13,7 +14,7 @@ else
         @foreach (var estm in estimates)
         {
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="/Housing/Estimates/Detailed?EstID=@estm.EsID" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">@estm.heading</h5>
                         <small>Starting at @estm.sellprice</small>
@@ -34,8 +35,7 @@ else
 
     protected override async void OnInitialized()
     {
-        estimates = await EstimateService.GetEstimates();
-        _ErrorMessage = EstimateService._ErrorMessage;
+        estimates = await EstimatesDataService.GetAsync();
         StateHasChanged();
     }
 }

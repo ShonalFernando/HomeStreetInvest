@@ -10,6 +10,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Advertisment.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Chat.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Estimate.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Feed.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HSDatabaseSettings.cs" />

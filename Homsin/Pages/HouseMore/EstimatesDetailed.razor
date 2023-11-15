@@ -1,6 +1,10 @@
 ﻿@page "/Housing/Estimates/Detailed"
+@using HomeStreetInvest.Model;
+@using Homsin.Service;
 
 @inject NavigationManager NavigationManager
+@inject EstimatesDataService EstimatesDataService
+@inject AuthenticationService AuthenticationService
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -43,7 +47,7 @@
     <div class="row">
         <div class="form-group">
             <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="heading">
+            <input type="text" class="form-control" @bind="heading" id="heading">
         </div>
     </div>
 
@@ -52,7 +56,7 @@
     <div class="row">
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea class="form-control" id="content" rows="6"></textarea>
+            <textarea class="form-control" id="content" rows="6" @bind="content"></textarea>
         </div>
     </div>
 
@@ -61,26 +65,7 @@
     <div class="row">
         <div class="form-group">
             <label for="Description">Description</label>
-            <input type="text" class="form-control" id="Description">
-        </div>
-    </div>
-
-    <br />
-
-
-    <div class="row">
-        <div class="form-group">
-            <label for="location">Location/Address</label>
-            <input type="text" class="form-control" id="location">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="propdat">Property Data</label>
-            <input type="text" class="form-control" id="propdat">
+            <input type="text" class="form-control" id="Description" @bind="description">
         </div>
     </div>
 
@@ -90,7 +75,7 @@
         <div class="form-group">
             <label for="sellprice">Selling Price</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="sellprice">
+                <input type="text" class="form-control" id="sellprice" @bind="_estimateValue">
                 <div class="input-group-append">
                     <span class="input-group-text">@_currency</span>
                 </div>
@@ -117,11 +102,11 @@
     bottom: 0;
     width: 100%;">
     <div class="row">
-        @if(_myPost)
+        @if (_myEst)
         {
             <div class="col-sm-10">
-                <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Edit Estimate</button>
-                 &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Delete Estimate</button>
+                <button @onclick="UpdateEst" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Edit Estimate</button>
+                 &nbsp; <button @onclick="DeleteEst" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Delete Estimate</button>
             </div>
             <div class="col-sm-2">
             </div>
@@ -129,7 +114,7 @@
         else
         {
             <div class="col-sm-10">
-                Message user username... &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Send Message</button>
+                Message user username... &nbsp; <button @onclick="UpdateEst" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Send Message</button>
             </div>
             <div class="col-sm-2">
             </div>
@@ -144,10 +129,82 @@
 {
     private string _currency { get; set; } = "$"; //Default
     private string _errorMessage { get; set; }
-    private bool _myPost { get; set; } = true;
+    private bool _myEst { get; set; } = true;
 
-    private void SubmitAd()
+    private string CurrEstID { get; set; }
+
+    private List<Estimate> AllEstimates { get; set; }
+    private Estimate _Estimate { get; set; }
+
+    private string heading { get; set; } = "";
+    private string content { get; set; } = "";
+    private string description { get; set; } = "";
+
+    private string _estimateValue { get; set; } = "Wait...";
+
+    protected async override void OnInitialized()
     {
+        var uri = new Uri(NavigationManager.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        CurrEstID = query["EstID"];
 
+        AllEstimates = await EstimatesDataService.GetAsync();
+
+
+        _Estimate = AllEstimates.Find(est => est.EsID.ToString().Equals(CurrEstID));
+
+        //Up
+        heading = _Estimate.heading;
+        content = _Estimate.content;
+        description = _Estimate.description;
+        _estimateValue = _Estimate.sellprice;
+
+        if (_Estimate.username == AuthenticationService.Username)
+        {
+            _myEst = true;
+        }
+
+        StateHasChanged();
+    }
+
+
+    private async void UpdateEst()
+    {
+        _Estimate.heading = heading;
+        _Estimate.content = content;
+        _Estimate.description = description;
+        _Estimate.sellprice = _estimateValue;
+
+        if (string.IsNullOrEmpty(_Estimate.content) ||
+            string.IsNullOrEmpty(_Estimate.heading) ||
+                string.IsNullOrEmpty(_Estimate.username) ||
+                    string.IsNullOrEmpty(_Estimate.sellprice) ||
+                        string.IsNullOrEmpty(_Estimate.description))
+        {
+            _errorMessage = "Ohhhhh something is missing";
+        }
+        else
+        {
+            try
+            {
+                await EstimatesDataService.UpdateAsync(_Estimate._id, _Estimate);
+            }
+            catch (Exception CEe)
+            {
+                _errorMessage = CEe.Message;
+            }
+        }
+    }
+
+    private async void DeleteEst()
+    {
+        try
+        {
+            await EstimatesDataService.RemoveAsync(_Estimate._id);
+        }
+        catch (Exception CEe)
+        {
+            _errorMessage = CEe.Message;
+        }
     }
 }

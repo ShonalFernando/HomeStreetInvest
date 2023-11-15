@@ -1,19 +1,14 @@
 ﻿@using HomeStreetInvest.Model;
 @using Homsin.Service;
 
-@inject FeedService FeedService
+@inject FeedDataService FeedDataService
 @inject AuthenticationService AuthenticationService
-
-<h1>@AuthenticationService.UserID</h1>
-<h1>@AuthenticationService.Username</h1>
-<h1>@AuthenticationService.FailMessage</h1>
-<h1>@AuthenticationService.UserIDstring</h1>
 
 <div class="container-fluid">
     @foreach (var myfeed in myfeeds)
     {
         <div class="list-group">
-            <a href="/Housing/MyPost/Detailed" class="list-group-item list-group-item-action flex-column align-items-start">
+            <a href="/Housing/MyPost/Detailed?FeID=@myfeed.FeID" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">@myfeed.heading</h5>
                     <small>@myfeed.datePosted</small>
@@ -25,6 +20,7 @@
         <br />
     }
 </div>
+
 @code
 {
     List<Feed> myfeeds { get; set; } = new();
@@ -32,8 +28,7 @@
 
     protected override async void OnInitialized()
     {
-        List<Feed> AllFeeds = await FeedService.GetFeeds();
-        _ErrorMessage = FeedService._ErrorMessage;
+        List<Feed> AllFeeds = await FeedDataService.GetAsync();
 
         foreach (var feed in AllFeeds)
         {

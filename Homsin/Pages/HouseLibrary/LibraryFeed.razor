@@ -1,7 +1,7 @@
 ﻿@using HomeStreetInvest.Model;
 @using Homsin.Service;
 
-@inject FeedService FeedService
+@inject FeedDataService FeedDataService
 
 <div class="container-fluid">
     @if(!Feeds.Any())
@@ -13,7 +13,7 @@
         @foreach (var feed in Feeds)
         {
             <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="/Housing/MyPost/Detailed?FeID=@feed.FeID" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">@feed.heading</h5>
                         <small>@feed.datePosted</small>
@@ -34,8 +34,7 @@
 
     protected override async void OnInitialized()
     {
-        Feeds = await FeedService.GetFeeds();
-        _ErrorMessage = FeedService._ErrorMessage;
+        Feeds = await FeedDataService.GetAsync();
         StateHasChanged();
     }
 }

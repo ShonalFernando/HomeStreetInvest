@@ -25,16 +25,16 @@ namespace HomeStreetInvest.DataRW.Service
         public async Task<List<Advertisment>> GetAsync() => //All
             await _Advertisments.Find(_ => true).ToListAsync();
 
-        public async Task<Advertisment?> GetAsync(ObjectId _id) => //PerAd
-            await _Advertisments.Find(x => x._id == _id).FirstOrDefaultAsync();
+        public async Task<Advertisment?> GetAsync(string AdID) => //PerAd
+            await _Advertisments.Find(x => x.AdID == AdID).FirstOrDefaultAsync();
 
         public async Task CreateAsync(Advertisment Advertisment) =>
         await _Advertisments.InsertOneAsync(Advertisment);
 
-        public async Task UpdateAsync(ObjectId _id, Advertisment Advertisment) =>
-            await _Advertisments.ReplaceOneAsync(x => x._id == _id, Advertisment);
+        public async Task UpdateAsync(string AdID, Advertisment Advertisment) =>
+            await _Advertisments.ReplaceOneAsync(x => x.AdID == AdID, Advertisment);
 
-        public async Task RemoveAsync(ObjectId _id) =>
-            await _Advertisments.DeleteOneAsync(x => x._id == _id);
+        public async Task RemoveAsync(string AdID) =>
+            await _Advertisments.DeleteOneAsync(x => x.AdID == AdID);
     }
 }

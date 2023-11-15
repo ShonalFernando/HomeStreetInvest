@@ -1,6 +1,11 @@
 ﻿ @page "/Messages"
+@using Homsin.Service;
 
- <br/>
+@inject NavigationManager NavigationManager
+@inject AuthenticationService AuthenticationService
+@inject MessageDataService MessageDataService
+
+<br/>
 
 <div class="container-fluid">
     <div class="row">
@@ -18,13 +23,36 @@
         <div class="col-1">
         </div>
         <div class="col-8">
-            <ChatHead></ChatHead>
+            @if(!string.IsNullOrEmpty(sender1))
+            {
+               <ChatHead me="@sender2" sender="sender1" type="@type"></ChatHead>
+            }
         </div>
         <div class="col-1">
         </div>
     </div>
 </div>
 
-@code {
+@code 
+{
+    private string sender1 { get; set; }
+    private string sender2 { get; set; }
+    private string type { get; set; }
+
+    protected async override void OnInitialized()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        sender2 = AuthenticationService.Username;
+        sender1 = query["Sender"]; //Actually the reciver, sender in other pers
+        type = query["type"];
+
+        //First Check if a chathead between two exist
+
+        List<HomeStreetInvest.Model.ChatHead> chatHeads = await MessageDataService.GetAsync();
+
+        StateHasChanged();
+    }
+
 
 }

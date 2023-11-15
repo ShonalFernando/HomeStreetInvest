@@ -2,6 +2,7 @@
 @using Homsin.Service;
 
 @inject AdService AdService
+@inject AdDataService AdDataService
 
 <div class="container-fluid">
     @if(!ads.Any())
@@ -12,11 +13,12 @@
     {
         @foreach (var ad in ads)
         {
+           
             <div class="list-group">
-                <a href="/Housing/Ads/Detailed?adID=@ad._id.ToString()" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="/Housing/Ads/Detailed?adID=@ad.AdID" class="list-group-item list-group-item-action flex-column align-items-start">
                     <div class="d-flex w-100 justify-content-between">
                         <h5 class="mb-1">@ad.heading</h5>
-                        <small>3 days ago : @ad.datePosted</small>
+                        <small>@ad.AdID 3 days ago : @ad.datePosted</small>
                     </div>
                     <p class="mb-1">@ad.content</p>
                     <small>@ad.description</small>
@@ -35,8 +37,7 @@
 
     protected override async void OnInitialized()
     {
-        ads = await AdService.GetAds();
-        _ErrorMessage = AdService._ErrorMessage;
+        ads = await AdDataService.GetAsync();
         StateHasChanged();
     }
 }

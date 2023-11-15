@@ -48,38 +48,23 @@ namespace HomeStreetInvest.DataRW.Controllers
             }
         }
 
-        [HttpPut("UpdateAd/{AdID}")]
-        public async Task<IActionResult> UpdateAd([FromBody] Advertisment _Advertisment, string AdID)
+        [HttpPut("UpdateAd/{_id}")]
+        public async Task<IActionResult> UpdateAd([FromBody] Advertisment _Advertisment,[FromRoute] string AdID)
         {
-
-            var AllAds = await _AdDataService.GetAsync();
-
-            foreach(var ads in AllAds)
-            {
-                if(ads.AdID == AdID)
-                {
-                    _Advertisment._id = ads._id;
 
                     try
                     {
-                        await _AdDataService.UpdateAsync(_Advertisment._id, _Advertisment);
+                        await _AdDataService.UpdateAsync(AdID, _Advertisment);
                         return Ok("Succesfully Updated Advertisment");
                     }
                     catch (Exception AdUE)
                     {
                         return Problem(AdUE.Message);
                     }
-                }
-                else
-                {
-                    return BadRequest("Nothing to Update");
-                }
-            }
-            return Problem();
         }
 
         [HttpDelete("DeleteAd/{AdID}")]
-        public async Task<IActionResult> DeleteAd(ObjectId AdID)
+        public async Task<IActionResult> DeleteAd(string AdID)
         {
             try
             {

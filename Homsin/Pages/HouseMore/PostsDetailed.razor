@@ -1,6 +1,11 @@
 ﻿@page "/Housing/MyPost/Detailed"
+@using HomeStreetInvest.Model;
+@using Homsin.Service;
 
 @inject NavigationManager NavigationManager
+@inject FeedDataService FeedDataService
+@inject AuthenticationService AuthenticationService
+
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -39,11 +44,12 @@
     <br />
 }
 
+
 <div class="container-fluid">
     <div class="row">
         <div class="form-group">
             <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="heading">
+            <input type="text" class="form-control" @bind="heading" id="heading">
         </div>
     </div>
 
@@ -52,7 +58,7 @@
     <div class="row">
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea class="form-control" id="content" rows="6"></textarea>
+            <textarea class="form-control" id="content" rows="6" @bind="content"></textarea>
         </div>
     </div>
 
@@ -60,55 +66,21 @@
 
     <div class="row">
         <div class="form-group">
-            <label for="heading">Heading</label>
-            <input type="text" class="form-control" id="Description">
+            <label for="Description">Description</label>
+            <input type="text" class="form-control" id="Description" @bind="description">
         </div>
     </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="content">Content</label>
-            <input type="text" class="form-control" id="content">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="location">Location/Address</label>
-            <input type="text" class="form-control" id="location">
-        </div>
-    </div>
-
-    <br />
-
-    <div class="row">
-        <div class="form-group">
-            <label for="sellprice">Selling Price</label>
-            <div class="input-group">
-                <input type="text" class="form-control" id="sellprice">
-                <div class="input-group-append">
-                    <span class="input-group-text">@_currency</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <br />
 
 </div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-
-
+<h1>CurrFeID</h1>
 <div class="container-fluid" style="background-color:#4C86A8; 
     padding-top:20px; 
     padding-bottom:20px;  
@@ -120,8 +92,8 @@
         @if (_myPost)
         {
             <div class="col-sm-10">
-                <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Edit Post</button>
-                &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Delete Post</button>
+                <button @onclick="UpdatePost" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Edit Post</button>
+                &nbsp; <button @onclick="DeletePost" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Delete Post</button>
             </div>
             <div class="col-sm-2">
             </div>
@@ -129,7 +101,7 @@
         else
         {
             <div class="col-sm-10">
-                Message user username... &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Send Message</button>
+                Message user username... &nbsp; <button @onclick="UpdatePost" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Send Message</button>
             </div>
             <div class="col-sm-2">
             </div>
@@ -144,9 +116,65 @@
     private string _errorMessage { get; set; }
     private bool _myPost { get; set; } = true;
 
-    private void SubmitAd()
-    {
+    private string CurrFeID { get; set; }
+    private List<Feed> feeds { get; set; }
+    private Feed _Feed { get; set; }
 
+    //Data for obj
+    public string heading { get; set; } = null!;
+    public string content { get; set; } = null!;
+    public string description { get; set; } = null!;
+
+    protected async override void OnInitialized()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+        var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+        CurrFeID = query["FeID"];
+
+        feeds = await FeedDataService.GetAsync();
+
+
+        _Feed = feeds.Find(est => est._id.ToString().Equals(CurrFeID));
+
+        //Up
+        heading = _Feed.heading;
+        content = _Feed.content;
+        description = _Feed.description;
+
+        if (_Feed.username == AuthenticationService.Username)
+        {
+            _myPost = true;
+        }
+
+        StateHasChanged();
     }
 
+
+    private async void UpdatePost()
+    {
+        _Feed.description = description;
+        _Feed.content = content;
+        _Feed.heading = heading;
+
+        try
+        {
+            await FeedDataService.UpdateAsync(_Feed._id, _Feed);
+        }
+        catch
+        {
+            _errorMessage = "Something Went Wrong!";
+        }
+    }
+
+    private async void DeletePost()
+    {
+        try
+        {
+            await FeedDataService.RemoveAsync(_Feed._id);
+        }
+        catch
+        {
+            _errorMessage = "Something Went Wrong!";
+        }
+    }
 }

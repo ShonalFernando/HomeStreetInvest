@@ -4,7 +4,8 @@
 
 @inject AuthenticationService AuthenticationService
 @inject NavigationManager NavigationManager
-@inject AdService AdService
+@inject MessageDataService MessageDataService
+@inject AdDataService AdDataService
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -70,6 +71,7 @@
 
 </div>
 
+
 <div class="container-fluid" style="background-color:#4C86A8;
     padding-top:20px;
     padding-bottom:20px;
@@ -90,14 +92,13 @@
         else
         {
             <div class="col-sm-10">
-                Message user username... &nbsp; <button @onclick="SubmitAd" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Send Message</button>
+                Message user username... &nbsp; <button @onclick="MessageUser" type="button" class="btn btn-outline-info"><img width="24" height="24" src="https://img.icons8.com/fluency/48/create-new.png" />&nbsp; Send Message</button>
             </div>
             <div class="col-sm-2">
             </div>
         }
     </div>
 </div>
-
 
 
 @code
@@ -109,11 +110,15 @@
 
     private string _currency { get; set; } = "$"; //Default
     private string _errorMessage { get; set; }
-    private bool _myAd { get; set; } = true;
+    private bool _myAd { get; set; }
 
+    private string uname { get; set; } = "a";
     List<Advertisment> ads { get; set; } = new();
     Advertisment CurrentAd { get; set; }
     private string CurrentAdID { get; set; }
+
+    //MessageData
+    private string Sender2 { get; set; }
 
     protected async override void OnInitialized()
     {
@@ -121,9 +126,8 @@
         var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
         CurrentAdID = query["adID"];
 
-        ads = await AdService.GetAds();
-        _errorMessage = AdService._ErrorMessage;
-        CurrentAd = ads.Find(ad => ad._id.ToString().Equals(CurrentAdID));
+        ads = await AdDataService.GetAsync();
+        CurrentAd = ads.Find(ad => ad.AdID.ToString().Equals(CurrentAdID));
 
         //Up
         heading = CurrentAd.heading;
@@ -134,7 +138,12 @@
         {
             _myAd = true;
         }
+        else
+        {
+            Sender2 = CurrentAd.username;
+        }
 
+        uname = AuthenticationService.Username + CurrentAd.username;
         StateHasChanged();
     }
 
@@ -142,8 +151,7 @@
     {
         try
         {
-            await AdService.DeleteAd(CurrentAd);
-            _errorMessage = AdService._ErrorMessage;
+            await AdDataService.RemoveAsync(CurrentAd._id);
         }
         catch (Exception  ee)
         {
@@ -167,12 +175,16 @@
         }
         else
         {
-            await AdService.UpdateAd(CurrentAd);
-            _errorMessage = AdService._ErrorMessage;
+            await AdDataService.UpdateAsync(CurrentAd._id, CurrentAd);
             //NavigationManager.NavigateTo("/Housing/Ads");
         }
 
 
         StateHasChanged();
+    }
+
+    private void MessageUser()
+    {
+        NavigationManager.NavigateTo($"/Messages?Sender={Sender2}&type=fromAd");
     }
 }

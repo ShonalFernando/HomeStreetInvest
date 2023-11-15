@@ -4,6 +4,7 @@
 @inject AdService AdService
 @inject AuthenticationService AuthenticationService
 @inject NavigationManager NavigationManager
+@inject AdDataService AdDataService
 @if (!string.IsNullOrEmpty(_errorMessage))
 {
     <div class="container-fluid" style="background-color:#BB6B00; padding-top:20px; padding-bottom:20px;">
@@ -72,8 +73,6 @@
     </div>
 </div>
 
-<h1>@AuthenticationService.Username</h1>
-
 @code 
 {
     private string _currency { get; set; } = "$"; //Default
@@ -107,8 +106,9 @@
         }
         else
         {
-            await AdService.CreateAd(Advertisment);
-            _errorMessage = AdService._ErrorMessage;
+            Advertisment._id = ObjectId.GenerateNewId();
+            Advertisment.AdID = Advertisment._id.ToString();
+            await AdDataService.CreateAsync(Advertisment);
             NavigationManager.NavigateTo("/Housing/Ads");
         }
 

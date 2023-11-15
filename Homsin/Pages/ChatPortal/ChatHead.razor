@@ -1,93 +1,40 @@
-﻿<div class="card">
-    <div class="card-header" style="background-color:#BB6B00;color:#EDE3E9;">
-        User2
-    </div>
-    <div class="card-body">
-        <p class="card-text">Sample Message goes here like this. like this sample message populated by the message list</p>
-    </div>
-</div>
+﻿@using HomeStreetInvest.Model;
+@using Homsin.Service;
+@inject AuthenticationService AuthenticationService
+@inject MessageDataService MessageDataService
+@inject NavigationManager NavigationManager
 
-<br />
-<br />
+@foreach (var chat in _chats)
+{
+    @if(chat.issender1 = isMe1st)
+    {
+        <div class="card">
+            <div class="card-header" style="text-align: right; background-color:#4C86A8; color:#EDE3E9;">
+                @me
+            </div>
+            <div class="card-body" style="text-align: right;">
+                <p class="card-text">@chat.chatMessage</p>
+            </div>
+        </div>
 
-<div class="card">
-    <div class="card-header" style="text-align: right; background-color:#4C86A8; color:#EDE3E9;">
-        User1
-    </div>
-    <div class="card-body" style="text-align: right;">
-        <p class="card-text">Sample Message from myself seperated by conditional statemetns. like this sample message populated by the message list</p>
-    </div>
-</div>
+        <br />
+        <br />
+    }
+    else
+    {
+        <div class="card">
+            <div class="card-header" style="background-color:#BB6B00;color:#EDE3E9;">
+                @sender
+            </div>
+            <div class="card-body">
+                <p class="card-text">@chat.chatMessage</p>
+            </div>
+        </div>
 
-<br />
-<br />
-
-<div class="card">
-    <div class="card-header" style="background-color:#BB6B00;color:#EDE3E9;">
-        User2
-    </div>
-    <div class="card-body">
-        <p class="card-text">Sample Message goes here like this. like this sample message populated by the message list</p>
-    </div>
-</div>
-
-<br />
-<br />
-
-<div class="card">
-    <div class="card-header" style="text-align: right; background-color:#4C86A8; color:#EDE3E9;">
-        User1
-    </div>
-    <div class="card-body" style="text-align: right;">
-        <p class="card-text">Sample Message from myself seperated by conditional statemetns. like this sample message populated by the message list</p>
-    </div>
-</div>
-
-<br />
-<br />
-<div class="card">
-    <div class="card-header" style="background-color:#BB6B00;color:#EDE3E9;">
-        User2
-    </div>
-    <div class="card-body">
-        <p class="card-text">Sample Message goes here like this. like this sample message populated by the message list</p>
-    </div>
-</div>
-
-<br />
-<br />
-
-<div class="card">
-    <div class="card-header" style="text-align: right; background-color:#4C86A8; color:#EDE3E9;">
-        User1
-    </div>
-    <div class="card-body" style="text-align: right;">
-        <p class="card-text">Sample Message from myself seperated by conditional statemetns. like this sample message populated by the message list</p>
-    </div>
-</div>
-
-<br />
-<br />
-<div class="card">
-    <div class="card-header" style="background-color:#BB6B00;color:#EDE3E9;">
-        User2
-    </div>
-    <div class="card-body">
-        <p class="card-text">Sample Message goes here like this. like this sample message populated by the message list</p>
-    </div>
-</div>
-
-<br />
-<br />
-
-<div class="card">
-    <div class="card-header" style="text-align: right; background-color:#4C86A8; color:#EDE3E9;">
-        User1
-    </div>
-    <div class="card-body" style="text-align: right;">
-        <p class="card-text">Sample Message from myself seperated by conditional statemetns. like this sample message populated by the message list</p>
-    </div>
-</div>
+        <br />
+        <br />
+    }
+}
 
 <br />
 <br />
@@ -96,14 +43,14 @@
 
 <div class="card">
     <div class="card-header" style="background-color:#BB6B00;color:#EDE3E9;">
-        User2: New Message
+        @me: New Message
     </div>
     <div class="card-body">
             <div class="form-group">
-                <input type="text" class="form-control" id="messagePrompt" placeholder="">
+            <input type="text" @bind="_NewMessage" class="form-control" id="messagePrompt" placeholder="">
             </div>
             <br/>
-        <button type="button" class="btn btn-outline-info"> <img width="24" height="24" src="https://img.icons8.com/fluency/24/filled-sent.png" alt="filled-sent" /> </button>
+        <button type="button" class="btn btn-outline-info" @onclick="SendMessage"> <img width="24" height="24" src="https://img.icons8.com/fluency/24/filled-sent.png" alt="filled-sent" /> </button>
     </div>
 </div>
 
@@ -111,6 +58,116 @@
 <br />
 
 
-@code {
+@code 
+{
+    [Parameter]
+    public string me { get; set; }
+
+    [Parameter]
+    public string sender { get; set; }
+
+    [Parameter]
+    public string type { get; set; }
+
+    private List<HomeStreetInvest.Model.ChatHead> _chatHeads { get; set; }
+    private List<HomeStreetInvest.Model.Chat> _chats { get; set; }
+
+    private string _NewMessage { get; set; }
+    private int _NewMessageindex { get; set; }
+
+    private string _ErrorMessage { get; set; }
+
+    private bool _isNewChatHead{ get; set; }
+    private bool isMe1st { get; set; }
+
+    private async void SendMessage()
+    {
+        if (_chats.Any())
+        {
+            _NewMessageindex = _chats.OrderByDescending(chat => chat.index).First().index + 1;
+        }
+        else
+        {
+            _NewMessageindex = 0;
+        }
+
+
+        if (!_isNewChatHead)
+        {
+            foreach (var chathead in _chatHeads)
+            {
+                if (chathead.sender1 == me && chathead.sender2 == sender)
+                {
+                    Chat chat = new();
+                    chat.issender1 = true;
+                    chat.chatMessage = _NewMessage;
+                    chat.index = _NewMessageindex;
+                    _chats.Add(chat);
+                    chathead.chats = _chats;
+
+                    break;
+                }
+                else if (chathead.sender2 == me && chathead.sender1 == sender)
+                {
+                    Chat chat = new();
+                    chat.issender1 = false;
+                    chat.chatMessage = _NewMessage;
+                    chat.index = _NewMessageindex;
+                    _chats.Add(chat);
+                    chathead.chats = _chats;
+
+                    break;
+                }
+            }
+        }
+        else
+        {
+            HomeStreetInvest.Model.ChatHead _NewChatHead = new();
+            Chat chat = new();
+            chat.issender1 = true;
+            chat.chatMessage = _NewMessage;
+            chat.index = _NewMessageindex;
+
+            _chats = new List<Chat>();
+            _chats.Add(chat);
+
+            _NewChatHead.chats = _chats;
+            _chatHeads.Add(_NewChatHead);
+        }
+
+    }
+
+    protected async override void OnInitialized()
+    {
+        try
+        {
+            _chatHeads = await MessageDataService.GetAsync();
+
+            foreach (var chat in _chatHeads)
+            {
+                _isNewChatHead = true;
+
+                if(chat.sender1 == me && chat.sender2 == sender)
+                {
+                    _chats = chat.chats;
+                    isMe1st = true;
+                    _isNewChatHead = false;
+                    break;
+                }
+                else if (chat.sender2 == me && chat.sender1 == sender)
+                {
+                    _chats = chat.chats;
+                    isMe1st = false;
+                    _isNewChatHead = false;
+                    break;
+                }
+            }
+        }
+        catch
+        {
+            _ErrorMessage = "Something Went Wrong";
+        }
+        
+    }
 
 }

@@ -58,6 +58,7 @@
 
     <ItemGroup>
       <PackageReference Include="MongoDB.Driver" Version="2.22.0" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     </ItemGroup>
 
     <Import Project="..\HomeStreetInvest.Model\HomeStreetInvest.Model.projitems" Label="Shared" />

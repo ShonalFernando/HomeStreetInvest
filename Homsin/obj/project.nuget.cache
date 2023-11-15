@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0pT6xeQwjyA8JyIr6qG/6Aw+JOmkwviAY1SP3/nmOLv0qIFGZO6UqpQo804ANUvwGOfs5h8xEOh0Si8lMGCwZw==",
+  "dgSpecHash": "AkNsq2gIGxknAgZQFYeyhsv6Ra+oRZ/3Y8lo7NQzx35ZJmA6xqH98mLuYFVfdOTqa4A9VOPH+Wla3G/jGQhmXQ==",
   "success": true,
   "projectFilePath": "D:\\Source\\Repos\\HomeStreetInvest\\Homsin\\Homsin.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\Shonal Fernando\\.nuget\\packages\\mongodb.driver\\2.22.0\\mongodb.driver.2.22.0.nupkg.sha512",
     "C:\\Users\\Shonal Fernando\\.nuget\\packages\\mongodb.driver.core\\2.22.0\\mongodb.driver.core.2.22.0.nupkg.sha512",
     "C:\\Users\\Shonal Fernando\\.nuget\\packages\\mongodb.libmongocrypt\\1.8.0\\mongodb.libmongocrypt.1.8.0.nupkg.sha512",
+    "C:\\Users\\Shonal Fernando\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Shonal Fernando\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
     "C:\\Users\\Shonal Fernando\\.nuget\\packages\\snappier\\1.0.0\\snappier.1.0.0.nupkg.sha512",
     "C:\\Users\\Shonal Fernando\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",

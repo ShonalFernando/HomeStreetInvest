@@ -1,8 +1,13 @@
 ﻿@page "/"
+@using HomeStreetInvest.Model;
 @using Homsin.Service;
 
 @inject NavigationManager NavigationManager
 @inject AuthenticationService AuthenticationService
+@inject AdDataService AdDataService
+@inject MarketAuxService MarketAuxService
+@inject FeedDataService FeedDataService
+
 
 <MasterLogCheck></MasterLogCheck>
 
@@ -19,8 +24,8 @@
 <div class="jumbotron jumbotron-fluid" style="background-color:#4C86A8">
     <div class="container">
         <br/>
-        <h1 class="display-4" style="color:white">Monday, 12 October 2023</h1>
-        <p class="lead" style="color:white">Welcome Back, Username</p>
+        <h1 class="display-4" style="color:white">@DateTime.Now.ToString("dddd"), @DateTime.Now.Day @DateTime.Now.ToString("MMMM") @DateTime.Now.Year</h1>
+        <p class="lead" style="color:white">Welcome Back, @AuthenticationService.Username</p>
         <br />
     </div>
 </div>
@@ -32,37 +37,37 @@
         <div class="row">
             <div class="col-sm">
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <a href="/Housing/Estimates/Create" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">Create House Estimate</h5>
 @*                            <small>3 days ago</small>*@
                         </div>
-                        <p class="mb-1">Create and Estimate profile thru wizard</p>
-                        <small>Donec id elit non mi porta.</small>
+                        <p class="mb-1">Create an Estimate profile thru wizard</p>
+                        <small>You can save your estimates</small>
                     </a>
                 </div>
             </div>
         <br />
             <div class="col-sm">
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="/Housing/Library" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">View Stock Summary</h5>
+                            <h5 class="mb-1">View Feed</h5>
                         </div>
-                        <p class="mb-1">View NasDaq and other Major Market Stock Prices</p>
-                        <small>Donec id elit non mi porta.</small>
+                        <p class="mb-1">View stock and House news feeds</p>
+                        <small>View and create Posts</small>
                     </a>
                 </div>
             </div>
         <br />
             <div class="col-sm">
                 <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                <a href="/Messages" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">House Listings Today</h5>
+                            <h5 class="mb-1">Messages</h5>
                         </div>
-                        <p class="mb-1">Browse and Create House listings Today</p>
-                        <small>Donec id elit non mi porta.</small>
+                        <p class="mb-1">25 New Messages</p>
+                        <small>View and Send Messages</small>
                     </a>
                 </div>
             </div>
@@ -71,84 +76,79 @@
     <br />
         <div class="row">
             <div class="col-sm-8">
+            @if (!ads.Any())
+            {
+                <p>Loading...</p>
+            }
+            else
+            {
                 <div id="accordion">
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Collapsible Group Item #1
+                                    @ads[ads.Count-1].heading
                                 </button>
                             </h5>
                         </div>
 
                         <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                @ads[ads.Count-1].content
                             </div>
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="card-header" id="headingTwo">
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Collapsible Group Item #2
+                                    @ads[ads.Count-2].heading
                                 </button>
                             </h5>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                @ads[ads.Count-2].content
                             </div>
                         </div>
                     </div>
+
                     <div class="card">
                         <div class="card-header" id="headingThree">
                             <h5 class="mb-0">
                                 <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Collapsible Group Item #3
+                                    @ads[ads.Count-3].heading
                                 </button>
                             </h5>
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                @ads[ads.Count-3].content
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
+        </div>
             <div class="col-sm-4">
             <ul class="list-group">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Morbi leo risus</li>
-                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item"><h5>Summary</h5></li>
+                <li class="list-group-item">20 My Ads</li>   
+                <li class="list-group-item">25 My Posts</li>
+                <li class="list-group-item">17 My Estimates</li>
+                <li class="list-group-item">08 Chats</li>
             </ul>
             <br/>
             <ul class="list-group">
                 <li class="list-group-item">
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="">
+                        <h5>From Admin</h5>
                     </div>
                 </li>
                 <li class="list-group-item">
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="progress">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="">
+                        <p>1 Notices</p>
                     </div>
                 </li>
             </ul>
@@ -223,3 +223,27 @@
     </footer>
 
     <!-- Footer -->
+
+@code
+{
+    List<Feed> feeds { get; set; }
+    List<Advertisment> ads { get; set; } = new();
+
+    Feed RandomFeed { get; set; }
+
+    private string _ErrorMessage { get; set; } = "";
+
+    private Root _MarketAuxNews { get; set; } = new();
+
+    protected override async void OnInitialized()
+    {
+        ads = (await AdDataService.GetAsync()).OrderBy(a => a.datePosted).ToList();
+        feeds = await FeedDataService.GetAsync();
+
+        Random random = new();
+
+        RandomFeed = feeds[random.Next(0, feeds.Count-1)];
+
+        StateHasChanged();
+    }
+}

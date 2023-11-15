@@ -1,4 +1,5 @@
 ﻿using HomeStreetInvest.Model;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -72,7 +73,7 @@ namespace Homsin.Service
             }
         }
 
-        public async Task UpdateAd(Advertisment Advertisment)
+        public async Task UpdateAd(Advertisment Advertisment, string AdID)
         {
             try
             {
@@ -80,7 +81,7 @@ namespace Homsin.Service
 
                 StringContent content = new StringContent(RawJson, System.Text.Encoding.UTF8, "application/json");
 
-                string apiUrl = $"https://localhost:{PortSettings.RWAPI}/api/Ads/UpdateAd/{Advertisment.AdID}";
+                string apiUrl = $"https://localhost:{PortSettings.RWAPI}/api/Ads/UpdateAd/{AdID}";
 
                 HttpClient client = new HttpClient();
                 var response = await client.PutAsync(apiUrl, content);
@@ -102,11 +103,11 @@ namespace Homsin.Service
             }
         }
 
-        public async Task DeleteAd(Advertisment Advertisment)
+        public async Task DeleteAd(Advertisment Advertisment, string AdID)
         {
             try
             {
-                string apiUrl = $"https://localhost:{PortSettings.RWAPI}/api/Ads/DeleteAd/{Advertisment._id}";
+                string apiUrl = $"https://localhost:{PortSettings.RWAPI}/api/Ads/DeleteAd/{AdID}";
 
                 HttpClient client = new HttpClient();
                 var response = await client.DeleteAsync(apiUrl);

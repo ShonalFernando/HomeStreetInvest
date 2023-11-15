@@ -1,14 +1,14 @@
 ﻿@using HomeStreetInvest.Model;
 @using Homsin.Service;
 
-@inject EstimateService EstimateService
 @inject AuthenticationService AuthenticationService
+@inject EstimatesDataService EstimatesDataService
 
 <div class="container-fluid">
     @foreach (var myest in myests)
     {
         <div class="list-group">
-            <a href="/Housing/Estimates/Detailed" class="list-group-item list-group-item-action flex-column align-items-start">
+            <a href="/Housing/Estimates/Detailed?EstID=@myest.EsID" class="list-group-item list-group-item-action flex-column align-items-start">
                 <div class="d-flex w-100 justify-content-between">
                     <h5 class="mb-1">@myest.heading</h5>
                     <small>@myest.sellprice</small>
@@ -27,8 +27,7 @@
 
     protected override async void OnInitialized()
     {
-        List<Estimate> AllEstimates = await EstimateService.GetEstimates();
-        _ErrorMessage = EstimateService._ErrorMessage;
+        List<Estimate> AllEstimates = await EstimatesDataService.GetAsync();
 
         foreach (var est in AllEstimates)
         {
