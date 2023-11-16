@@ -4,6 +4,9 @@
 
 @inject AuthenticationService AuthenticationService
 @inject NavigationManager NavigationManager
+@inject EncryptionService EncryptionService
+@inject AccountsDataService AccountsDataService
+
 @if (!string.IsNullOrEmpty(_errorMessage))
 {
     <div class="container-fluid" style="background-color:#BB6B00; padding-top:20px; padding-bottom:20px;">
@@ -90,7 +93,7 @@
             }
             else
             {
-                UserAccount CheckUser = new();
+                UserAccount CheckUser;
                 try
                 {
                     CheckUser = await AuthenticationService.GetUser(_Username);
@@ -103,14 +106,16 @@
                         //Add further validations as want
                         UserAccount UserAccount = new();
                         UserAccount.email = _Email;
-                        UserAccount.userName = _Email;
-                        UserAccount.password = _Email;
-                        UserAccount.encKey = "123456789123";
+                        UserAccount.userName = _Username;
+                        UserAccount.password = _Password;
+
+                        UserAccount.encKey = "b14ca5898a4e4133bbce2ea2315a1916";
 
                         try
                         {
-                            await AuthenticationService.CreateUser(UserAccount);
-                            
+                            UserAccount.password = EncryptionService.EncryptString( UserAccount.encKey, UserAccount.password);
+                            await AccountsDataService.CreateAsync(UserAccount);
+
                             NavigationManager.NavigateTo("/Auth");
                             StateHasChanged();
                         }

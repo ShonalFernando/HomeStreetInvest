@@ -13,7 +13,7 @@ namespace Homsin.Service
 {
     public class MessageDataService
     {
-        private readonly IMongoCollection<ChatHead> _ChatHeads;
+        private readonly IMongoCollection<Chat> _Chats;
 
         public MessageDataService(IOptions<DatabaseSettings> HSDatabaseSettings)
         {
@@ -23,23 +23,23 @@ namespace Homsin.Service
             var mongoDatabase = mongoClient.GetDatabase(
                 HSDatabaseSettings.Value.DatabaseName);
 
-            _ChatHeads = mongoDatabase.GetCollection<ChatHead>(
+            _Chats = mongoDatabase.GetCollection<Chat>(
                 HSDatabaseSettings.Value.HSDBC[6]);
         }
 
-        public async Task<List<ChatHead>> GetAsync() => //All
-            await _ChatHeads.Find(_ => true).ToListAsync();
+        public async Task<List<Chat>> GetAsync() => //All
+            await _Chats.Find(_ => true).ToListAsync();
 
-        public async Task<ChatHead> GetAsync(ObjectId _id) => //Perfd
-            await _ChatHeads.Find(x => x._id == _id).FirstOrDefaultAsync();
+        public async Task<Chat> GetAsync(ObjectId _id) => //Perfd
+            await _Chats.Find(x => x._id == _id).FirstOrDefaultAsync();
 
-        public async Task CreateAsync(ChatHead ChatHead) =>
-        await _ChatHeads.InsertOneAsync(ChatHead);
+        public async Task CreateAsync(Chat Chat) =>
+        await _Chats.InsertOneAsync(Chat);
 
-        public async Task UpdateAsync(ObjectId _id, ChatHead ChatHead) =>
-            await _ChatHeads.ReplaceOneAsync(x => x._id == _id, ChatHead);
+        public async Task UpdateAsync(ObjectId _id, Chat Chat) =>
+            await _Chats.ReplaceOneAsync(x => x._id == _id, Chat);
 
         public async Task RemoveAsync(ObjectId _id) =>
-            await _ChatHeads.DeleteOneAsync(x => x._id == _id);
+            await _Chats.DeleteOneAsync(x => x._id == _id);
     }
 }

@@ -29,13 +29,13 @@
     <AppXManifest Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-11-15T03:14:35.776</Modified>
+      <Modified>2023-11-15T13:19:52.994</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-11-15T01:47:23.913</Modified>
+      <Modified>2023-11-15T13:19:51.356</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.runtimeconfig.json">
       <PackagePath>Homsin.runtimeconfig.json</PackagePath>
@@ -43,15 +43,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.dll">
       <PackagePath>Homsin.dll</PackagePath>
-      <Modified>2023-11-15T03:14:31.477</Modified>
+      <Modified>2023-11-15T13:19:45.689</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Homsin.exe</PackagePath>
-      <Modified>2023-11-15T03:14:31.671</Modified>
+      <Modified>2023-11-15T13:19:46.538</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.deps.json">
       <PackagePath>Homsin.deps.json</PackagePath>
-      <Modified>2023-11-15T01:47:22.323</Modified>
+      <Modified>2023-11-15T10:05:14.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.20\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>

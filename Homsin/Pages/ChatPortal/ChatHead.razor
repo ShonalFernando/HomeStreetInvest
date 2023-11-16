@@ -1,38 +1,42 @@
 ﻿@using HomeStreetInvest.Model;
 @using Homsin.Service;
+@using MongoDB.Bson;
 @inject AuthenticationService AuthenticationService
 @inject MessageDataService MessageDataService
 @inject NavigationManager NavigationManager
 
-@foreach (var chat in _chats)
+@if(_Chats.Any())
 {
-    @if(chat.issender1 = isMe1st)
+    @foreach (var chat in _Chats)
     {
-        <div class="card">
-            <div class="card-header" style="text-align: right; background-color:#4C86A8; color:#EDE3E9;">
-                @me
+        @if (chat.sender == sender)
+        {
+            <div class="card">
+                <div class="card-header" style="text-align: right; background-color:#4C86A8; color:#EDE3E9;">
+                    @me
+                </div>
+                <div class="card-body" style="text-align: right;">
+                    <p class="card-text">@chat.chatMessage</p>
+                </div>
             </div>
-            <div class="card-body" style="text-align: right;">
-                <p class="card-text">@chat.chatMessage</p>
-            </div>
-        </div>
 
-        <br />
-        <br />
-    }
-    else
-    {
-        <div class="card">
-            <div class="card-header" style="background-color:#BB6B00;color:#EDE3E9;">
-                @sender
+            <br />
+            <br />
+        }
+        else
+        {
+            <div class="card">
+                <div class="card-header" style="background-color:#BB6B00;color:#EDE3E9;">
+                    @sender
+                </div>
+                <div class="card-body">
+                    <p class="card-text">@chat.chatMessage</p>
+                </div>
             </div>
-            <div class="card-body">
-                <p class="card-text">@chat.chatMessage</p>
-            </div>
-        </div>
 
-        <br />
-        <br />
+            <br />
+            <br />
+        }
     }
 }
 
@@ -69,8 +73,7 @@
     [Parameter]
     public string type { get; set; }
 
-    private List<HomeStreetInvest.Model.ChatHead> _chatHeads { get; set; }
-    private List<HomeStreetInvest.Model.Chat> _chats { get; set; }
+    private List<Chat> _Chats { get; set; } = new();
 
     private string _NewMessage { get; set; }
     private int _NewMessageindex { get; set; }
@@ -82,92 +85,51 @@
 
     private async void SendMessage()
     {
-        if (_chats.Any())
-        {
-            _NewMessageindex = _chats.OrderByDescending(chat => chat.index).First().index + 1;
-        }
-        else
-        {
-            _NewMessageindex = 0;
-        }
+        Chat _NewChat = new();
+        _NewChat.sender = sender;
+        _NewChat.reciever = me;
+        _NewChat.chatMessage = _NewMessage;
+        _NewChat.chatindex = (await MessageDataService.GetAsync()).OrderBy(cht => cht.chatindex).First().chatindex + 1;
+        _NewChat._id = ObjectId.GenerateNewId();
+        await MessageDataService.CreateAsync(_NewChat);
 
+        var _AllChats = await MessageDataService.GetAsync();
 
-        if (!_isNewChatHead)
+        _Chats.Clear();
+
+        foreach (var chat in _AllChats)
         {
-            foreach (var chathead in _chatHeads)
+            if (chat.sender == me && chat.reciever == sender)
             {
-                if (chathead.sender1 == me && chathead.sender2 == sender)
-                {
-                    Chat chat = new();
-                    chat.issender1 = true;
-                    chat.chatMessage = _NewMessage;
-                    chat.index = _NewMessageindex;
-                    _chats.Add(chat);
-                    chathead.chats = _chats;
-
-                    break;
-                }
-                else if (chathead.sender2 == me && chathead.sender1 == sender)
-                {
-                    Chat chat = new();
-                    chat.issender1 = false;
-                    chat.chatMessage = _NewMessage;
-                    chat.index = _NewMessageindex;
-                    _chats.Add(chat);
-                    chathead.chats = _chats;
-
-                    break;
-                }
+                _Chats.Add(chat);
+            }
+            else if (chat.sender == sender && chat.reciever == me)
+            {
+                _Chats.Add(chat);
             }
         }
-        else
-        {
-            HomeStreetInvest.Model.ChatHead _NewChatHead = new();
-            Chat chat = new();
-            chat.issender1 = true;
-            chat.chatMessage = _NewMessage;
-            chat.index = _NewMessageindex;
 
-            _chats = new List<Chat>();
-            _chats.Add(chat);
-
-            _NewChatHead.chats = _chats;
-            _chatHeads.Add(_NewChatHead);
-        }
-
+        StateHasChanged();
     }
 
     protected async override void OnInitialized()
     {
-        try
+        var _AllChats= await MessageDataService.GetAsync();
+
+        foreach(var chat in _AllChats)
         {
-            _chatHeads = await MessageDataService.GetAsync();
-
-            foreach (var chat in _chatHeads)
+            if(chat.sender == me && chat.reciever == sender)
             {
-                _isNewChatHead = true;
-
-                if(chat.sender1 == me && chat.sender2 == sender)
-                {
-                    _chats = chat.chats;
-                    isMe1st = true;
-                    _isNewChatHead = false;
-                    break;
-                }
-                else if (chat.sender2 == me && chat.sender1 == sender)
-                {
-                    _chats = chat.chats;
-                    isMe1st = false;
-                    _isNewChatHead = false;
-                    break;
-                }
+                _Chats.Add(chat);
+            }
+            else if (chat.sender == sender && chat.reciever == me)
+            {
+                _Chats.Add(chat);
             }
         }
-        catch
-        {
-            _ErrorMessage = "Something Went Wrong";
-        }
-        
+        StateHasChanged();
     }
 
 }
+
+

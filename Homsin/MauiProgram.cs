@@ -28,6 +28,8 @@ namespace Homsin
             builder.Services.AddScoped<AdDataService>();
             builder.Services.AddScoped<MarketAuxService>();
             builder.Services.AddScoped<MessageDataService>();
+            builder.Services.AddScoped<AccountsDataService>();
+            builder.Services.AddScoped<EncryptionService>();
 #if DEBUG
             builder.Services.AddBlazorWebViewDeveloperTools();
 #endif

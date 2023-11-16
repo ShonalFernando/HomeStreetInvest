@@ -8,19 +8,12 @@ namespace HomeStreetInvest.Model
 {
     public class Chat
     {
-        public int index { get; set; }
-        public bool issender1 { get; set; } //TO d
-        public string chatMessage { get; set;} = null!;
-        public bool isSeen { get; set; }
-    }
-
-    public class ChatHead
-    {
         [BsonId]
         public ObjectId _id { get; set; }
-        public string sender1 { get; set; } = null!; //Username of first sender
-        public string sender2 { get; set; } = null!; //target username
-        public List<Chat>? chats { get; set; }
+        public int chatindex { get; set; }
+        public string sender { get; set; } = null!; //Username of first sender
+        public string reciever { get; set; } = null!; //target username
+        public string chatMessage { get; set; } = null!;
     }
 
 }

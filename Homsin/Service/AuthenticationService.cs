@@ -136,7 +136,7 @@ namespace Homsin.Service
 				StringContent content = new StringContent(RawJson, System.Text.Encoding.UTF8, "application/json");
 				string apiUrl = $"https://localhost:{PortSettings.AuthAPI}/api/UserAccounts/CreateUser";
 				HttpClient client = new HttpClient();
-				var response = await client.PostAsJsonAsync(apiUrl, content);
+				var response = await client.PostAsync(apiUrl, content);
 
 			}
 			catch (Exception)
