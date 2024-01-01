@@ -96,7 +96,7 @@
 
     private async void Login()
     {
-        _Password = EncryptionService.DecryptString(_Password, "b14ca5898a4e4133bbce2ea2315a1916");
+        //_Password = EncryptionService.DecryptString(_Password, "b14ca5898a4e4133bbce2ea2315a1916");
         AuthenticationService.isLogged = (await AuthenticationService.Auth(_Username, _Password)).Item1;
         UserAccount AccountCurrent = (await AuthenticationService.Auth(_Username, _Password)).Item2;
 

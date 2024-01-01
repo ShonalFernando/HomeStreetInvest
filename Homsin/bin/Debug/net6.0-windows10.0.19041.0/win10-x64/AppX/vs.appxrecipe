@@ -29,7 +29,7 @@
     <AppXManifest Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-11-15T13:19:52.994</Modified>
+      <Modified>2023-11-21T14:30:19.783</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -39,19 +39,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.runtimeconfig.json">
       <PackagePath>Homsin.runtimeconfig.json</PackagePath>
-      <Modified>2023-11-15T01:47:22.672</Modified>
+      <Modified>2023-11-21T14:30:16.423</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.dll">
       <PackagePath>Homsin.dll</PackagePath>
-      <Modified>2023-11-15T13:19:45.689</Modified>
+      <Modified>2023-11-21T14:29:53.526</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>Homsin.exe</PackagePath>
-      <Modified>2023-11-15T13:19:46.538</Modified>
+      <Modified>2023-11-21T14:29:53.962</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Source\Repos\HomeStreetInvest\Homsin\bin\Debug\net6.0-windows10.0.19041.0\win10-x64\Homsin.deps.json">
       <PackagePath>Homsin.deps.json</PackagePath>
-      <Modified>2023-11-15T10:05:14.297</Modified>
+      <Modified>2023-11-21T14:30:15.901</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Shonal Fernando\.nuget\packages\microsoft.netcore.app.runtime.win-x64\6.0.20\runtimes\win-x64\lib\net6.0\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
